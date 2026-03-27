@@ -13,8 +13,8 @@ import {
   Package,
 } from "lucide-react";
 
-const G = "#1C5C38";
-const WOOD = "#A97C50";
+const G = "#FC4F00";
+const WOOD = "#f5b99d";
 
 type CartItem = {
   id: string;
@@ -30,7 +30,7 @@ type CartItem = {
 const initCart: CartItem[] = [
   {
     id: "1",
-    name: "MDF Panel Standard E1",
+    name: "Panneau MDF Standard E1",
     sku: "MDF-18-2440",
     dimensions: "2440 × 1220 mm",
     thickness: "18mm",
@@ -41,7 +41,7 @@ const initCart: CartItem[] = [
   },
   {
     id: "2",
-    name: "Birch Plywood BB/BB",
+    name: "Contreplaqué Bouleau BB/BB",
     sku: "PLY-15-1220",
     dimensions: "2440 × 1220 mm",
     thickness: "15mm",
@@ -52,7 +52,7 @@ const initCart: CartItem[] = [
   },
   {
     id: "3",
-    name: "OSB 3 Structural Board",
+    name: "Panneau OSB 3 Structurel",
     sku: "OSB-18-2500",
     dimensions: "2500 × 1250 mm",
     thickness: "18mm",
@@ -92,13 +92,13 @@ export function CartScreen() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        background: "#F5F7F5",
+        background: "#FBFBFB",
       }}
     >
       {/* Header */}
       <div
         style={{
-          background: `linear-gradient(135deg, ${G} 0%, #143D28 100%)`,
+          background: `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`,
           padding: "14px 16px 18px",
         }}
       >
@@ -128,10 +128,10 @@ export function CartScreen() {
                 margin: 0,
               }}
             >
-              My Cart
+              Mon Panier
             </h1>
             <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>
-              {cart.length} product{cart.length !== 1 ? "s" : ""} · All prices HT (Excl. VAT)
+              {cart.length} produit{cart.length !== 1 ? "s" : ""} · Prix HT (TVA non incl.)
             </div>
           </div>
         </div>
@@ -147,18 +147,18 @@ export function CartScreen() {
             gap: "8px",
           }}
         >
-          <Truck size={15} color={freeShipping ? "#A8DDB5" : "rgba(255,255,255,0.6)"} />
+          <Truck size={15} color={freeShipping ? "#FFE2CF" : "rgba(255,255,255,0.6)"} />
           {freeShipping ? (
-            <span style={{ fontSize: "12px", color: "#A8DDB5", fontWeight: 600 }}>
-              ✓ Free freight shipping applied on this order
+            <span style={{ fontSize: "12px", color: "#FFE2CF", fontWeight: 600 }}>
+              ✓ Port gratuit appliqué sur cette commande
             </span>
           ) : (
             <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.8)" }}>
-              Add{" "}
+              Ajoutez{" "}
               <strong style={{ color: "white" }}>
                 {(500 - subtotalHT).toFixed(2)}€ HT
               </strong>{" "}
-              more for free freight shipping
+              pour bénéficier du port gratuit
             </span>
           )}
         </div>
@@ -177,7 +177,7 @@ export function CartScreen() {
                 overflow: "hidden",
                 marginBottom: "10px",
                 boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
-                border: "1px solid #EEF3EE",
+                border: "1px solid #EAEAEA",
               }}
             >
               <div style={{ display: "flex", gap: "12px", padding: "12px" }}>
@@ -189,7 +189,7 @@ export function CartScreen() {
                     borderRadius: "10px",
                     overflow: "hidden",
                     flexShrink: 0,
-                    border: "1px solid #E8EDE8",
+                    border: "1px solid #EAEAEA",
                   }}
                 >
                   <img
@@ -211,7 +211,7 @@ export function CartScreen() {
                     {item.dimensions} · {item.thickness}
                   </div>
                   <div style={{ fontSize: "12px", color: WOOD, fontWeight: 600, marginTop: "3px" }}>
-                    {item.unitPrice.toFixed(2)}€ HT/unit
+                    {item.unitPrice.toFixed(2)}€ HT/unité
                   </div>
                 </div>
 
@@ -226,7 +226,7 @@ export function CartScreen() {
                     alignSelf: "flex-start",
                   }}
                 >
-                  <Trash2 size={15} color="#B0453A" />
+                  <Trash2 size={15} color="#CF2E2E" />
                 </button>
               </div>
 
@@ -237,8 +237,8 @@ export function CartScreen() {
                   alignItems: "center",
                   justifyContent: "space-between",
                   padding: "10px 12px",
-                  background: "#F9FBFA",
-                  borderTop: "1px solid #EEF3EE",
+                  background: "#FBFBFB",
+                  borderTop: "1px solid #EAEAEA",
                 }}
               >
                 {/* Qty stepper */}
@@ -247,7 +247,7 @@ export function CartScreen() {
                     display: "flex",
                     alignItems: "center",
                     background: "white",
-                    border: "1.5px solid #D8E4D8",
+                    border: "1.5px solid #EAEAEA",
                     borderRadius: "9px",
                     overflow: "hidden",
                     height: "36px",
@@ -276,8 +276,8 @@ export function CartScreen() {
                       textAlign: "center",
                       background: "white",
                       border: "none",
-                      borderLeft: "1px solid #D8E4D8",
-                      borderRight: "1px solid #D8E4D8",
+                      borderLeft: "1px solid #EAEAEA",
+                      borderRight: "1px solid #EAEAEA",
                       outline: "none",
                       fontSize: "14px",
                       fontWeight: 700,
@@ -307,7 +307,7 @@ export function CartScreen() {
                   <div style={{ fontSize: "16px", fontWeight: 800, color: G }}>
                     {(item.unitPrice * item.qty).toFixed(2)}€
                   </div>
-                  <div style={{ fontSize: "10px", color: "#8A9A8E" }}>HT total</div>
+                  <div style={{ fontSize: "10px", color: "#8A9A8E" }}>Total HT</div>
                 </div>
               </div>
             </div>
@@ -321,7 +321,7 @@ export function CartScreen() {
               background: "white",
               borderRadius: "12px",
               padding: "12px",
-              border: "1px solid #E8EDE8",
+                border: "1px solid #EAEAEA",
               display: "flex",
               gap: "8px",
               alignItems: "center",
@@ -331,7 +331,7 @@ export function CartScreen() {
             <input
               value={promoCode}
               onChange={(e) => setPromoCode(e.target.value)}
-              placeholder="Promo / Partner Code"
+              placeholder="Code Promo / Partenaire"
               style={{
                 flex: 1,
                 background: "none",
@@ -345,7 +345,7 @@ export function CartScreen() {
             <button
               onClick={() => promoCode && setPromoApplied(true)}
               style={{
-                background: promoApplied ? "#E8F5EE" : G,
+                background: promoApplied ? "#FEF1E4" : G,
                 color: promoApplied ? G : "white",
                 border: "none",
                 borderRadius: "8px",
@@ -356,7 +356,7 @@ export function CartScreen() {
                 fontFamily: "Inter, sans-serif",
               }}
             >
-              {promoApplied ? "✓ Applied" : "Apply"}
+              {promoApplied ? "✓ Appliqué" : "Appliquer"}
             </button>
           </div>
         </div>
@@ -368,8 +368,8 @@ export function CartScreen() {
               background: "white",
               borderRadius: "12px",
               padding: "14px",
-              border: "1.5px solid #D4C5A9",
-              boxShadow: "0 0 0 3px rgba(169,124,80,0.06)",
+                border: "1.5px solid #F7D8C2",
+                boxShadow: "0 0 0 3px rgba(241, 88, 8, 0.08)",
             }}
           >
             <div
@@ -382,17 +382,17 @@ export function CartScreen() {
             >
               <FileText size={14} color={WOOD} />
               <span style={{ fontSize: "12px", fontWeight: 700, color: "#1A2520" }}>
-                Internal PO / Référence Chantier
+                BdC interne / Référence Chantier
               </span>
             </div>
             <input
               value={poRef}
               onChange={(e) => setPoRef(e.target.value)}
-              placeholder="e.g. PO-2024-089 · Chantier Rue de Rivoli"
+              placeholder="ex. PO-2024-089 · Chantier Rue de Rivoli"
               style={{
                 width: "100%",
-                background: "#FBF9F6",
-                border: "1.5px solid #E8DECC",
+                background: "#FEF1E4",
+                border: "1.5px solid #F7D8C2",
                 borderRadius: "9px",
                 padding: "10px 12px",
                 fontSize: "13px",
@@ -403,7 +403,7 @@ export function CartScreen() {
               }}
             />
             <div style={{ fontSize: "11px", color: "#A0907A", marginTop: "6px" }}>
-              This reference will appear on your invoice and delivery note
+              Cette référence apparaîtra sur votre facture et bon de livraison
             </div>
           </div>
         </div>
@@ -415,7 +415,7 @@ export function CartScreen() {
             background: "white",
             borderRadius: "14px",
             overflow: "hidden",
-            border: "1px solid #E8EDE8",
+            border: "1px solid #EAEAEA",
             boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
           }}
         >
@@ -430,14 +430,14 @@ export function CartScreen() {
           >
             <Package size={15} color="white" />
             <span style={{ fontSize: "13px", fontWeight: 700, color: "white", letterSpacing: "0.3px" }}>
-              ORDER SUMMARY
+              RÉCAPITULATIF DE COMMANDE
             </span>
           </div>
 
           <div style={{ padding: "14px" }}>
             {[
               {
-                label: "Subtotal HT",
+                label: "Sous-total HT",
                 value: `${subtotalHT.toFixed(2)} €`,
                 color: "#1A2520",
                 bold: false,
@@ -446,14 +446,14 @@ export function CartScreen() {
                 ? [{ label: "Promo — 5%", value: `−${discount.toFixed(2)} €`, color: G, bold: false }]
                 : []),
               {
-                label: "VAT (20%)",
+                label: "TVA (20%)",
                 value: `${vat.toFixed(2)} €`,
                 color: "#7A8A7E",
                 bold: false,
               },
               {
-                label: "Freight",
-                value: freeShipping ? "FREE" : "On estimate",
+                label: "Livraison",
+                value: freeShipping ? "GRATUIT" : "Sur devis",
                 color: freeShipping ? G : "#7A8A7E",
                 bold: false,
               },
@@ -465,7 +465,7 @@ export function CartScreen() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   padding: "7px 0",
-                  borderBottom: "1px solid #F0F4F0",
+                  borderBottom: "1px solid #EAEAEA",
                 }}
               >
                 <span style={{ fontSize: "13px", color: "#7A8A7E" }}>{row.label}</span>
@@ -495,7 +495,7 @@ export function CartScreen() {
                 <div style={{ fontSize: "14px", fontWeight: 700, color: "#1A2520" }}>
                   Total TTC
                 </div>
-                <div style={{ fontSize: "10px", color: "#A0B0A5" }}>Inc. VAT</div>
+                <div style={{ fontSize: "10px", color: "#A0B0A5" }}>TVA incluse</div>
               </div>
               <div style={{ textAlign: "right" }}>
                 <div style={{ fontSize: "26px", fontWeight: 800, color: G }}>
@@ -516,16 +516,15 @@ export function CartScreen() {
             display: "flex",
             alignItems: "flex-start",
             gap: "8px",
-            background: "#FFF8F0",
-            border: "1px solid #F0D4A8",
+            background: "#FEF1E4",
+            border: "1px solid #F7D8C2",
             borderRadius: "10px",
             padding: "10px 12px",
           }}
         >
           <AlertCircle size={14} color={WOOD} style={{ flexShrink: 0, marginTop: "1px" }} />
           <div style={{ fontSize: "12px", color: "#7A5A30", lineHeight: "1.5" }}>
-            <strong>Minimum order: 500€ HT.</strong> Free freight shipping applied automatically on orders
-            above this threshold.
+            <strong>Commande minimum : 500€ HT.</strong> Port gratuit appliqué automatiquement pour les commandes dépassant ce seuil.
           </div>
         </div>
 
@@ -536,7 +535,7 @@ export function CartScreen() {
       <div
         style={{
           background: "white",
-          borderTop: "1px solid #E8EDE8",
+          borderTop: "1px solid #EAEAEA",
           padding: "12px 16px",
           boxShadow: "0 -4px 20px rgba(0,0,0,0.08)",
         }}
@@ -545,9 +544,9 @@ export function CartScreen() {
           style={{
             width: "100%",
             background: subtotalHT >= 500
-              ? `linear-gradient(135deg, ${G} 0%, #143D28 100%)`
-              : "#C8D8C8",
-            color: subtotalHT >= 500 ? "white" : "#8A9A8E",
+              ? `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`
+              : "#F2F2F2",
+            color: subtotalHT >= 500 ? "white" : "#757575",
             border: "none",
             borderRadius: "14px",
             padding: "16px",
@@ -559,14 +558,14 @@ export function CartScreen() {
             alignItems: "center",
             justifyContent: "center",
             gap: "8px",
-            boxShadow: subtotalHT >= 500 ? "0 4px 16px rgba(28,92,56,0.35)" : "none",
+            boxShadow: subtotalHT >= 500 ? "0 8px 22px rgba(241, 88, 8, 0.25)" : "none",
           }}
         >
-          Proceed to Checkout
+          Valider la commande
           <ChevronRight size={18} />
         </button>
         <div style={{ textAlign: "center", fontSize: "11px", color: "#A0B0A5", marginTop: "8px" }}>
-          Secured by SSL · Payment on invoice · Net 30 days
+          Sécurisé SSL · Paiement sur facture · Net 30 jours
         </div>
       </div>
     </div>

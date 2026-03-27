@@ -2,10 +2,10 @@ import { useNavigate, useLocation } from "react-router";
 import { Home, BookOpen, ShoppingCart, User } from "lucide-react";
 
 const navItems = [
-  { label: "Home", icon: Home, path: "/app" },
-  { label: "Catalog", icon: BookOpen, path: "/app/catalog" },
-  { label: "Cart", icon: ShoppingCart, path: "/app/cart", badge: 3 },
-  { label: "Profile", icon: User, path: "/app/profile" },
+  { label: "Accueil", icon: Home, path: "/app" },
+  { label: "Catalogue", icon: BookOpen, path: "/app/catalog" },
+  { label: "Panier", icon: ShoppingCart, path: "/app/cart", badge: 3 },
+  { label: "Profil", icon: User, path: "/app/profile" },
 ];
 
 export function BottomNav() {
@@ -60,7 +60,7 @@ export function BottomNav() {
                   transform: "translateX(-50%)",
                   width: "32px",
                   height: "3px",
-                  background: "#1C5C38",
+                  background: "#FC4F00",
                   borderRadius: "0 0 3px 3px",
                 }}
               />
@@ -68,7 +68,7 @@ export function BottomNav() {
             <div style={{ position: "relative" }}>
               <Icon
                 size={22}
-                color={active ? "#1C5C38" : "#8A9A8E"}
+                color={active ? "#FC4F00" : "#8A9A8E"}
                 strokeWidth={active ? 2.5 : 1.8}
               />
               {item.badge && (
@@ -97,7 +97,7 @@ export function BottomNav() {
               style={{
                 fontSize: "10px",
                 fontWeight: active ? 600 : 400,
-                color: active ? "#1C5C38" : "#8A9A8E",
+                color: active ? "#FC4F00" : "#8A9A8E",
                 letterSpacing: "0.2px",
               }}
             >

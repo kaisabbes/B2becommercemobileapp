@@ -18,18 +18,18 @@ import {
   BarChart2,
 } from "lucide-react";
 
-const G = "#1C5C38";
-const WOOD = "#A97C50";
+const G = "#FC4F00";
+const WOOD = "#F5B99D";
 
 const menuSections = [
   {
-    title: "Orders & Documents",
+    title: "Commandes & Documents",
     items: [
       {
         id: "quotes",
         icon: FileText,
-        label: "My Quotes (Devis)",
-        sub: "3 quotes pending review",
+        label: "Mes Devis",
+        sub: "3 devis en attente de validation",
         color: "#3B82F6",
         badge: "3",
         badgeColor: "#3B82F6",
@@ -37,8 +37,8 @@ const menuSections = [
       {
         id: "orders",
         icon: ClipboardList,
-        label: "Order History & Invoices",
-        sub: "View & download all invoices",
+        label: "Historique & Factures",
+        sub: "Consulter et télécharger vos factures",
         color: G,
         badge: null,
         badgeColor: null,
@@ -47,13 +47,13 @@ const menuSections = [
     ],
   },
   {
-    title: "Pricing & Account",
+    title: "Tarifs & Compte",
     items: [
       {
         id: "pricelist",
         icon: Tag,
-        label: "My Custom Price List",
-        sub: "Negotiated rates for your account",
+        label: "Ma Grille de prix personnalisée",
+        sub: "Tarifs négociés pour votre compte",
         color: WOOD,
         badge: "NEW",
         badgeColor: WOOD,
@@ -61,8 +61,8 @@ const menuSections = [
       {
         id: "company",
         icon: Building2,
-        label: "Company Details",
-        sub: "SIRET · VAT · Billing address",
+        label: "Détails de la société",
+        sub: "SIRET · TVA · Adresse de facturation",
         color: "#6366F1",
         badge: null,
         badgeColor: null,
@@ -70,13 +70,13 @@ const menuSections = [
     ],
   },
   {
-    title: "Settings",
+    title: "Paramètres",
     items: [
       {
         id: "notifications",
         icon: Bell,
         label: "Notifications",
-        sub: "Stock alerts & promotions",
+        sub: "Alertes stock & promotions",
         color: "#F59E0B",
         badge: null,
         badgeColor: null,
@@ -84,8 +84,8 @@ const menuSections = [
       {
         id: "settings",
         icon: Settings,
-        label: "Account Settings",
-        sub: "Password · Language · 2FA",
+        label: "Paramètres du compte",
+        sub: "Mot de passe · Langue · 2FA",
         color: "#8B5CF6",
         badge: null,
         badgeColor: null,
@@ -95,9 +95,9 @@ const menuSections = [
 ];
 
 const stats = [
-  { label: "Total Orders", value: "147", icon: ClipboardList, color: G },
-  { label: "YTD Spend HT", value: "€87.4K", icon: TrendingUp, color: WOOD },
-  { label: "Loyalty Points", value: "2,340", icon: Star, color: "#F59E0B" },
+  { label: "Total commandes", value: "147", icon: ClipboardList, color: G },
+  { label: "Dépenses YTD HT", value: "€87,4K", icon: TrendingUp, color: WOOD },
+  { label: "Points fidélité", value: "2 340", icon: Star, color: "#F59E0B" },
 ];
 
 export function ProfileScreen() {
@@ -109,7 +109,7 @@ export function ProfileScreen() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        background: "#F5F7F5",
+        background: "#FBFBFB",
       }}
     >
       {/* Scrollable content */}
@@ -117,7 +117,7 @@ export function ProfileScreen() {
         {/* Header */}
         <div
           style={{
-            background: `linear-gradient(145deg, ${G} 0%, #143D28 100%)`,
+            background: `linear-gradient(145deg, ${G} 0%, ${WOOD} 100%)`,
             padding: "20px 18px 22px",
             position: "relative",
             overflow: "hidden",
@@ -168,7 +168,7 @@ export function ProfileScreen() {
                     border: "3px solid rgba(255,255,255,0.25)",
                   }}
                 >
-                  MD
+                  SS
                 </div>
                 <div
                   style={{
@@ -179,17 +179,17 @@ export function ProfileScreen() {
                     width: "14px",
                     height: "14px",
                     borderRadius: "50%",
-                    border: "2px solid #143D28",
+                    border: `2px solid ${G}`,
                   }}
                 />
               </div>
 
               <div>
                 <div style={{ color: "white", fontSize: "18px", fontWeight: 800, lineHeight: "1.2" }}>
-                  Martin Dupont
+                  Sofiene Sellami
                 </div>
                 <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "13px", marginTop: "1px" }}>
-                  Dupont Construction SARL
+                  MPBS Group
                 </div>
                 {/* Premium badge */}
                 <div
@@ -198,14 +198,14 @@ export function ProfileScreen() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "5px",
-                    background: `linear-gradient(120deg, ${WOOD} 0%, #C49A55 100%)`,
+                background: `linear-gradient(120deg, ${WOOD} 0%, #FF8848 100%)`,
                     borderRadius: "20px",
                     padding: "4px 10px",
                   }}
                 >
                   <Award size={11} color="white" />
                   <span style={{ color: "white", fontSize: "10px", fontWeight: 700, letterSpacing: "0.5px" }}>
-                    PREMIUM CUSTOMER GROUP
+                    GROUPE CLIENT PREMIUM
                   </span>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export function ProfileScreen() {
           <div style={{ display: "flex", gap: "8px", marginTop: "14px", position: "relative" }}>
             {[
               { label: "SIRET: 123 456 789 00012" },
-              { label: "VAT: FR 12 345678900" },
+              { label: "TVA: FR 12 345678900" },
             ].map((p) => (
               <div
                 key={p.label}
@@ -270,7 +270,7 @@ export function ProfileScreen() {
                 alignItems: "center",
                 gap: "5px",
                 boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
-                border: "1px solid #EEF3EE",
+                border: "1px solid #EAEAEA",
               }}
             >
               <div
@@ -301,7 +301,7 @@ export function ProfileScreen() {
             background: "white",
             borderRadius: "14px",
             padding: "14px",
-            border: "1px solid #EEF3EE",
+            border: "1px solid #EAEAEA",
             boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
           }}
         >
@@ -309,10 +309,10 @@ export function ProfileScreen() {
             <div style={{ display: "flex", alignItems: "center", gap: "7px" }}>
               <BarChart2 size={14} color={G} />
               <span style={{ fontSize: "12px", fontWeight: 700, color: "#1A2520" }}>
-                Purchase Activity — 2025
+                Activité d'achat — 2025
               </span>
             </div>
-            <span style={{ fontSize: "11px", color: "#8A9A8E" }}>Monthly HT (€)</span>
+            <span style={{ fontSize: "11px", color: "#8A9A8E" }}>Mensuel HT (€)</span>
           </div>
           <div style={{ display: "flex", alignItems: "flex-end", gap: "4px", height: "44px" }}>
             {[35, 58, 42, 75, 90, 65, 80, 100, 70, 88, 95, 60].map((h, i) => (
@@ -325,16 +325,16 @@ export function ProfileScreen() {
                     i === 8
                       ? G
                       : i > 8
-                      ? "#D8E8D8"
-                      : `${G}50`,
+                      ? "#F7D8C2"
+                      : `${G}4D`,
                   borderRadius: "3px 3px 0 0",
                 }}
               />
             ))}
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: "4px" }}>
-            {["J", "F", "M", "A", "M", "J", "J", "A", "S", "O", "N", "D"].map((m) => (
-              <div key={m} style={{ flex: 1, textAlign: "center", fontSize: "9px", color: "#A0B0A5" }}>
+            {["Jan", "Fév", "Mar", "Avr", "Mai", "Jun", "Jul", "Aoû", "Sep", "Oct", "Nov", "Déc"].map((m, i) => (
+              <div key={i} style={{ flex: 1, textAlign: "center", fontSize: "9px", color: "#A0B0A5" }}>
                 {m}
               </div>
             ))}
@@ -361,7 +361,7 @@ export function ProfileScreen() {
                 background: "white",
                 borderRadius: "14px",
                 overflow: "hidden",
-                border: "1px solid #EEF3EE",
+                border: "1px solid #EAEAEA",
                 boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
               }}
             >
@@ -378,10 +378,10 @@ export function ProfileScreen() {
                     alignItems: "center",
                     gap: "12px",
                     padding: "13px 14px",
-                    background: activeCard === item.id ? "#F5F7F5" : "white",
+                    background: activeCard === item.id ? "#FEF1E4" : "white",
                     border: "none",
                     borderBottom:
-                      idx < section.items.length - 1 ? "1px solid #F0F4F0" : "none",
+                      idx < section.items.length - 1 ? "1px solid #EAEAEA" : "none",
                     cursor: "pointer",
                     textAlign: "left",
                     fontFamily: "Inter, sans-serif",
@@ -453,14 +453,14 @@ export function ProfileScreen() {
               marginBottom: "8px",
             }}
           >
-            Your Dedicated Sales Representative
+            Votre Chargé de compte dédié
           </div>
           <div
             style={{
               background: "white",
               borderRadius: "16px",
               padding: "16px",
-              border: "1px solid #EEF3EE",
+              border: "1px solid #EAEAEA",
               boxShadow: "0 2px 10px rgba(0,0,0,0.08)",
               display: "flex",
               flexDirection: "column",
@@ -490,7 +490,7 @@ export function ProfileScreen() {
                   Pierre Lefebvre
                 </div>
                 <div style={{ fontSize: "12px", color: "#7A8A7E", marginTop: "2px" }}>
-                  Senior B2B Account Manager
+                  Responsable Grands Comptes B2B
                 </div>
                 {/* Stars / availability */}
                 <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "5px" }}>
@@ -499,7 +499,7 @@ export function ProfileScreen() {
                       display: "flex",
                       alignItems: "center",
                       gap: "3px",
-                      background: "#E8F5EE",
+                      background: "#FEF1E4",
                       padding: "3px 8px",
                       borderRadius: "6px",
                     }}
@@ -509,10 +509,10 @@ export function ProfileScreen() {
                         width: "6px",
                         height: "6px",
                         borderRadius: "50%",
-                        background: "#2ED573",
+                        background: "#FF8848",
                       }}
                     />
-                    <span style={{ fontSize: "10px", color: G, fontWeight: 600 }}>Available now</span>
+                    <span style={{ fontSize: "10px", color: G, fontWeight: 600 }}>Disponible maintenant</span>
                   </div>
                   <div style={{ display: "flex" }}>
                     {[1, 2, 3, 4, 5].map((s) => (
@@ -525,16 +525,16 @@ export function ProfileScreen() {
 
             {/* Expertise chips */}
             <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-              {["MDF Specialist", "Large Volumes", "Custom Quotes"].map((chip) => (
+              {["Spécialiste MDF", "Grands volumes", "Devis sur mesure"].map((chip) => (
                 <div
                   key={chip}
                   style={{
-                    background: "#F4F7F5",
-                    border: "1px solid #D8E4D8",
+                    background: "#FBFBFB",
+                    border: "1px solid #EAEAEA",
                     borderRadius: "6px",
                     padding: "3px 9px",
                     fontSize: "10px",
-                    color: "#4A6A54",
+                    color: "#1C0D0A",
                     fontWeight: 600,
                   }}
                 >
@@ -548,7 +548,7 @@ export function ProfileScreen() {
               <a
                 href="tel:+33123456789"
                 style={{
-                  background: `linear-gradient(135deg, ${G} 0%, #143D28 100%)`,
+                  background: `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`,
                   color: "white",
                   borderRadius: "12px",
                   padding: "12px",
@@ -560,15 +560,15 @@ export function ProfileScreen() {
                   fontSize: "13px",
                   fontWeight: 700,
                   fontFamily: "Inter, sans-serif",
-                  boxShadow: "0 3px 10px rgba(28,92,56,0.3)",
+                  boxShadow: "0 8px 22px rgba(241, 88, 8, 0.25)",
                 }}
               >
                 <Phone size={15} />
-                Call Now
+                Appeler
               </a>
               <button
                 style={{
-                  background: "#F4F7F5",
+                  background: "#FBFBFB",
                   border: `1.5px solid ${G}40`,
                   color: G,
                   borderRadius: "12px",
@@ -591,8 +591,8 @@ export function ProfileScreen() {
             {/* Direct line */}
             <div
               style={{
-                background: "#FBF9F6",
-                border: "1px solid #E8DECC",
+                background: "#FEF1E4",
+                border: "1px solid #F7D8C2",
                 borderRadius: "10px",
                 padding: "10px 12px",
                 display: "flex",
@@ -602,14 +602,14 @@ export function ProfileScreen() {
             >
               <div>
                 <div style={{ fontSize: "10px", color: "#A0907A", fontWeight: 600, letterSpacing: "0.5px" }}>
-                  DIRECT LINE
+                  LIGNE DIRECTE
                 </div>
                 <div style={{ fontSize: "14px", fontWeight: 700, color: "#1A2520" }}>
                   +33 1 23 45 67 89
                 </div>
               </div>
               <div style={{ fontSize: "11px", color: "#A0907A" }}>
-                Mon–Fri · 8h–18h
+                Lun–Ven · 8h–18h
               </div>
             </div>
           </div>

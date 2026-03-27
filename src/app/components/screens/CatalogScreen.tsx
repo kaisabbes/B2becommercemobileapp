@@ -11,23 +11,23 @@ import {
   Package,
 } from "lucide-react";
 
-const G = "#1C5C38";
-const WOOD = "#A97C50";
+const G = "#FC4F00";
+const WOOD = "#F5B99D";
 
 const categories = [
-  { id: "all", label: "All Products" },
+  { id: "all", label: "Tous les produits" },
   { id: "mdf", label: "MDF" },
-  { id: "plywood", label: "Plywood" },
-  { id: "melamine", label: "Melamine" },
+  { id: "plywood", label: "Contreplaqué" },
+  { id: "melamine", label: "Mélaminé" },
   { id: "osb", label: "OSB" },
   { id: "hdf", label: "HDF" },
-  { id: "chipboard", label: "Chipboard" },
+  { id: "chipboard", label: "Aggloméré" },
 ];
 
 const products = [
   {
     id: "1",
-    name: "MDF Panel Standard",
+    name: "Panneau MDF Standard",
     thickness: "18mm",
     sku: "MDF-18-2440",
     price: "15.50",
@@ -35,11 +35,11 @@ const products = [
     category: "mdf",
     stock: true,
     image: "https://images.unsplash.com/photo-1564691848938-d0fc26235733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
-    tag: "Best Seller",
+    tag: "Meilleure vente",
   },
   {
     id: "2",
-    name: "Birch Plywood",
+    name: "Contreplaqué Bouleau",
     thickness: "15mm",
     sku: "PLY-15-1220",
     price: "22.80",
@@ -51,7 +51,7 @@ const products = [
   },
   {
     id: "3",
-    name: "OSB 3 Board",
+    name: "Panneau OSB 3",
     thickness: "18mm",
     sku: "OSB-18-2500",
     price: "11.20",
@@ -63,7 +63,7 @@ const products = [
   },
   {
     id: "4",
-    name: "White Melamine Panel",
+    name: "Panneau Mélaminé Blanc",
     thickness: "16mm",
     sku: "MEL-16-W-2440",
     price: "18.90",
@@ -75,7 +75,7 @@ const products = [
   },
   {
     id: "5",
-    name: "MDF Moisture Resistant",
+    name: "MDF Hydrofuge",
     thickness: "22mm",
     sku: "MDF-22-MR",
     price: "19.40",
@@ -87,7 +87,7 @@ const products = [
   },
   {
     id: "6",
-    name: "Marine Plywood",
+    name: "Contreplaqué Marin",
     thickness: "12mm",
     sku: "PLY-12-MAR",
     price: "31.50",
@@ -113,7 +113,7 @@ export function CatalogScreen() {
     <div
       style={{
         height: "100%",
-        background: "#F5F7F5",
+        background: "#FBFBFB",
         display: "flex",
         flexDirection: "column",
       }}
@@ -121,7 +121,7 @@ export function CatalogScreen() {
       {/* Header */}
       <div
         style={{
-          background: `linear-gradient(135deg, ${G} 0%, #143D28 100%)`,
+          background: `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`,
           padding: "14px 18px 18px",
         }}
       >
@@ -137,10 +137,10 @@ export function CatalogScreen() {
             <div
               style={{ color: "rgba(255,255,255,0.7)", fontSize: "11px", fontWeight: 500, letterSpacing: "0.5px" }}
             >
-              GOOD MORNING
+              BONJOUR
             </div>
             <div style={{ color: "white", fontSize: "17px", fontWeight: 700 }}>
-              Martin Dupont
+              Sofiene Sellami
             </div>
           </div>
           <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
@@ -168,7 +168,7 @@ export function CatalogScreen() {
                   height: "8px",
                   background: "#E85D26",
                   borderRadius: "50%",
-                  border: "1.5px solid #1C5C38",
+                  border: "1.5px solid #FC4F00",
                 }}
               />
             </button>
@@ -186,7 +186,7 @@ export function CatalogScreen() {
                 fontSize: "15px",
               }}
             >
-              MD
+              SS
             </div>
           </div>
         </div>
@@ -215,7 +215,7 @@ export function CatalogScreen() {
           >
             <Search size={16} color={searchFocused ? "#8A9A8E" : "rgba(255,255,255,0.7)"} />
             <input
-              placeholder="Search panels, SKU, brand..."
+              placeholder="Rechercher panneaux, SKU, marque..."
               onFocus={() => setSearchFocused(true)}
               onBlur={() => setSearchFocused(false)}
               style={{
@@ -228,7 +228,7 @@ export function CatalogScreen() {
                 fontFamily: "Inter, sans-serif",
               }}
             />
-            <ScanBarcode size={18} color={searchFocused ? "#A97C50" : "rgba(255,255,255,0.7)"} />
+            <ScanBarcode size={18} color={searchFocused ? WOOD : "rgba(255,255,255,0.7)"} />
           </div>
           <button
             style={{
@@ -254,7 +254,7 @@ export function CatalogScreen() {
         <div
           style={{
             margin: "14px 14px 0",
-            background: `linear-gradient(120deg, #2D6A4F 0%, ${WOOD} 100%)`,
+            background: `linear-gradient(120deg, ${G} 0%, ${WOOD} 100%)`,
             borderRadius: "14px",
             padding: "14px 16px",
             display: "flex",
@@ -264,13 +264,13 @@ export function CatalogScreen() {
         >
           <div>
             <div style={{ color: "rgba(255,255,255,0.8)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.8px" }}>
-              LIMITED OFFER
+              OFFRE LIMITÉE
             </div>
             <div style={{ color: "white", fontSize: "16px", fontWeight: 700, marginTop: "2px" }}>
-              OSB3 Boards — 15% off
+              Panneaux OSB3 — 15% de remise
             </div>
             <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "12px", marginTop: "2px" }}>
-              On orders of 50+ units · Valid until Mar 31
+              Pour commandes 50+ unités · Valable jusqu'au 31 mars
             </div>
           </div>
           <div
@@ -284,7 +284,7 @@ export function CatalogScreen() {
               cursor: "pointer",
             }}
           >
-            <span style={{ color: "white", fontSize: "12px", fontWeight: 600 }}>Shop</span>
+            <span style={{ color: "white", fontSize: "12px", fontWeight: 600 }}>Voir</span>
             <ChevronRight size={13} color="white" />
           </div>
         </div>
@@ -292,8 +292,8 @@ export function CatalogScreen() {
         {/* Stats row */}
         <div style={{ display: "flex", gap: "10px", margin: "12px 14px 0" }}>
           {[
-            { label: "Orders This Month", value: "24", icon: Package, color: G },
-            { label: "Total Spent HT", value: "€12,450", icon: TrendingUp, color: WOOD },
+            { label: "Commandes ce mois", value: "24", icon: Package, color: G },
+            { label: "Total dépensé HT", value: "€12 450", icon: TrendingUp, color: WOOD },
           ].map((s) => (
             <div
               key={s.label}
@@ -332,7 +332,7 @@ export function CatalogScreen() {
         {/* Category chips */}
         <div style={{ padding: "14px 14px 0" }}>
           <div style={{ fontSize: "13px", fontWeight: 700, color: "#1A2520", marginBottom: "10px" }}>
-            Browse by Category
+            Parcourir par catégorie
           </div>
           <div
             style={{
@@ -351,12 +351,12 @@ export function CatalogScreen() {
                   flexShrink: 0,
                   padding: "7px 14px",
                   borderRadius: "20px",
-                  border: activeCategory === cat.id ? "none" : "1.5px solid #D8E4D8",
+                  border: activeCategory === cat.id ? "none" : "1.5px solid #EAEAEA",
                   background:
                     activeCategory === cat.id
                       ? G
                       : "white",
-                  color: activeCategory === cat.id ? "white" : "#4A6A54",
+                  color: activeCategory === cat.id ? "white" : "#1C0D0A",
                   fontSize: "12px",
                   fontWeight: 600,
                   cursor: "pointer",
@@ -381,9 +381,9 @@ export function CatalogScreen() {
             }}
           >
             <div style={{ fontSize: "13px", fontWeight: 700, color: "#1A2520" }}>
-              {filtered.length} Products
+              {filtered.length} Produit{filtered.length > 1 ? "s" : ""}
             </div>
-            <div style={{ fontSize: "11px", color: "#8A9A8E" }}>Prices shown HT (Excl. VAT)</div>
+            <div style={{ fontSize: "11px", color: "#8A9A8E" }}>Prix HT (TVA non incl.)</div>
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
@@ -397,7 +397,7 @@ export function CatalogScreen() {
                   overflow: "hidden",
                   boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
                   cursor: "pointer",
-                  border: "1px solid #EEF3EE",
+                  border: "1px solid #EAEAEA",
                 }}
               >
                 {/* Product image */}
@@ -425,7 +425,7 @@ export function CatalogScreen() {
                     {product.stock ? (
                       <div
                         style={{
-                          background: "#1C5C38",
+                          background: G,
                           color: "white",
                           fontSize: "9px",
                           fontWeight: 700,
@@ -434,7 +434,7 @@ export function CatalogScreen() {
                           letterSpacing: "0.5px",
                         }}
                       >
-                        IN STOCK
+                        EN STOCK
                       </div>
                     ) : (
                       <div
@@ -447,7 +447,7 @@ export function CatalogScreen() {
                           borderRadius: "5px",
                         }}
                       >
-                        ON ORDER
+                        SUR COMMANDE
                       </div>
                     )}
                     {product.tag && (
@@ -481,7 +481,7 @@ export function CatalogScreen() {
                       alignItems: "center",
                       justifyContent: "center",
                       cursor: "pointer",
-                      boxShadow: "0 2px 8px rgba(28,92,56,0.4)",
+                      boxShadow: "0 6px 16px rgba(241, 88, 8, 0.28)",
                     }}
                     onClick={(e) => {
                       e.stopPropagation();

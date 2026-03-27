@@ -21,7 +21,7 @@ export default function App() {
         {/* Status bar */}
         <div
           className="flex items-center justify-between px-6 pt-3 pb-1"
-          style={{ background: "#1C5C38", color: "white" }}
+          style={{ background: "#ed793d", color: "white" }}
         >
           <span style={{ fontSize: "12px", fontWeight: 600 }}>9:41</span>
           <div

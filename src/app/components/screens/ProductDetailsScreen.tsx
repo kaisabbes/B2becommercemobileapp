@@ -16,8 +16,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const G = "#1C5C38";
-const WOOD = "#A97C50";
+const G = "#FC4F00";
+const WOOD = "#f5b99d";
 
 const images = [
   "https://images.unsplash.com/photo-1564691848938-d0fc26235733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
@@ -26,23 +26,23 @@ const images = [
 ];
 
 const pricingTiers = [
-  { range: "1 – 9 units", price: "15.50", perUnit: "unit", highlight: false },
-  { range: "10 – 49 units", price: "14.00", perUnit: "unit", highlight: false },
-  { range: "50+ units", price: "12.50", perUnit: "unit", highlight: true },
+  { range: "1 – 9 unités", price: "15.50", perUnit: "unité", highlight: false },
+  { range: "10 – 49 unités", price: "14.00", perUnit: "unité", highlight: false },
+  { range: "50+ unités", price: "12.50", perUnit: "unité", highlight: true },
 ];
 
 const dimensions = ["2440 × 1220 mm", "2800 × 1220 mm", "3050 × 1220 mm"];
 const thicknesses = ["12mm", "16mm", "18mm", "22mm", "25mm"];
 
 const specs = [
-  { label: "Material", value: "MDF Standard E1" },
-  { label: "Density", value: "750 kg/m³" },
-  { label: "Surface", value: "Sanded both sides" },
-  { label: "Glue Class", value: "E1 / CARB P2" },
-  { label: "Humidity", value: "< 8%" },
-  { label: "Fire Rating", value: "Class D-s2, d0" },
-  { label: "Origin", value: "EU Certified" },
-  { label: "Palette", value: "50 sheets" },
+  { label: "Matériau", value: "MDF Standard E1" },
+  { label: "Densité", value: "750 kg/m³" },
+  { label: "Surface", value: "Poncé deux faces" },
+  { label: "Classe colle", value: "E1 / CARB P2" },
+  { label: "Humidité", value: "< 8%" },
+  { label: "Classement feu", value: "Class D-s2, d0" },
+  { label: "Origine", value: "Certifié UE" },
+  { label: "Palette", value: "50 feuilles" },
 ];
 
 export function ProductDetailsScreen() {
@@ -69,7 +69,7 @@ export function ProductDetailsScreen() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        background: "white",
+        background: "#FBFBFB",
         position: "relative",
       }}
     >
@@ -271,13 +271,13 @@ export function ProductDetailsScreen() {
               {[1, 2, 3, 4, 5].map((s) => (
                 <Star key={s} size={12} fill={s <= 4 ? WOOD : "none"} color={WOOD} />
               ))}
-              <span style={{ fontSize: "12px", color: "#7A8A7E", marginLeft: "4px" }}>
-                4.2 (18 reviews)
+              <span style={{ fontSize: "12px", color: "#757575", marginLeft: "4px" }}>
+                4,2 (18 avis)
               </span>
             </div>
             <div
               style={{
-                background: "#E8F5EE",
+                background: "#FEF1E4",
                 color: G,
                 fontSize: "11px",
                 fontWeight: 700,
@@ -296,18 +296,18 @@ export function ProductDetailsScreen() {
                   background: G,
                 }}
               />
-              IN STOCK — 450 units
+              IN STOCK — 450 unités
             </div>
           </div>
 
           {/* ─── PRICING BLOCK ─── */}
           <div
             style={{
-              background: "#F4F7F5",
+              background: "#FBFBFB",
               borderRadius: "14px",
               padding: "14px",
               marginBottom: "14px",
-              border: "1px solid #E0EAE3",
+              border: "1px solid #EAEAEA",
             }}
           >
             <div style={{ display: "flex", alignItems: "baseline", gap: "6px", marginBottom: "4px" }}>
@@ -315,18 +315,18 @@ export function ProductDetailsScreen() {
                 {currentPrice.toFixed(2)}€
               </span>
               <span style={{ fontSize: "14px", color: "#5A6A5E", fontWeight: 500 }}>
-                HT / unit
+                HT / unité
               </span>
             </div>
             <div style={{ fontSize: "11px", color: "#8A9A8E", marginBottom: "12px" }}>
-              ≈ {(currentPrice / (2.44 * 1.22)).toFixed(2)}€ HT/m² · VAT not included
+              ≈ {(currentPrice / (2.44 * 1.22)).toFixed(2)}€ HT/m² · TVA non incluse
             </div>
 
             {/* Tiered pricing table */}
             <div
               style={{ fontSize: "11px", fontWeight: 700, color: "#5A6A5E", marginBottom: "7px", letterSpacing: "0.5px" }}
             >
-              VOLUME DISCOUNT PRICING
+              TARIFS DÉGRESSIFS
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
               {pricingTiers.map((tier, i) => (
@@ -342,14 +342,14 @@ export function ProductDetailsScreen() {
                       getActiveTier() === i
                         ? `${G}15`
                         : tier.highlight
-                        ? "#FFF8F0"
+                        ? "#FEF1E4"
                         : "white",
                     border:
                       getActiveTier() === i
                         ? `1.5px solid ${G}50`
                         : tier.highlight
                         ? `1px solid ${WOOD}40`
-                        : "1px solid #E8EDE8",
+                        : "1px solid #EAEAEA",
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
@@ -358,7 +358,7 @@ export function ProductDetailsScreen() {
                     )}
                     {tier.highlight && getActiveTier() !== i && (
                       <span style={{ fontSize: "10px", background: WOOD, color: "white", padding: "1px 5px", borderRadius: "4px", fontWeight: 700 }}>
-                        BEST
+                        MEILLEUR
                       </span>
                     )}
                     <span style={{ fontSize: "12px", color: "#2D3A35", fontWeight: 500 }}>
@@ -393,9 +393,9 @@ export function ProductDetailsScreen() {
                   style={{
                     padding: "7px 12px",
                     borderRadius: "9px",
-                    border: selectedDim === d ? `2px solid ${G}` : "1.5px solid #D8E4D8",
+                    border: selectedDim === d ? `2px solid ${G}` : "1.5px solid #EAEAEA",
                     background: selectedDim === d ? `${G}12` : "white",
-                    color: selectedDim === d ? G : "#4A6A54",
+                    color: selectedDim === d ? G : "#1C0D0A",
                     fontSize: "12px",
                     fontWeight: selectedDim === d ? 700 : 400,
                     cursor: "pointer",
@@ -410,7 +410,7 @@ export function ProductDetailsScreen() {
 
           <div style={{ marginBottom: "14px" }}>
             <div style={{ fontSize: "12px", fontWeight: 700, color: "#1A2520", marginBottom: "8px" }}>
-              Thickness
+              Épaisseur
             </div>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
               {thicknesses.map((t) => (
@@ -420,9 +420,9 @@ export function ProductDetailsScreen() {
                   style={{
                     padding: "7px 14px",
                     borderRadius: "9px",
-                    border: selectedThick === t ? `2px solid ${G}` : "1.5px solid #D8E4D8",
+                    border: selectedThick === t ? `2px solid ${G}` : "1.5px solid #EAEAEA",
                     background: selectedThick === t ? `${G}12` : "white",
-                    color: selectedThick === t ? G : "#4A6A54",
+                    color: selectedThick === t ? G : "#1C0D0A",
                     fontSize: "12px",
                     fontWeight: selectedThick === t ? 700 : 400,
                     cursor: "pointer",
@@ -444,24 +444,24 @@ export function ProductDetailsScreen() {
             }}
           >
             {[
-              { icon: Truck, text: "Free freight 500€+" },
-              { icon: Package, text: "Ships in 2–3 days" },
+              { icon: Truck, text: "Port offert dès 500€" },
+              { icon: Package, text: "Expédié sous 2–3 jours" },
             ].map((item) => (
               <div
                 key={item.text}
                 style={{
                   flex: 1,
-                  background: "#F4F7F5",
+                  background: "#FBFBFB",
                   borderRadius: "10px",
                   padding: "10px",
                   display: "flex",
                   alignItems: "center",
                   gap: "8px",
-                  border: "1px solid #E0EAE3",
+                  border: "1px solid #EAEAEA",
                 }}
               >
                 <item.icon size={14} color={G} />
-                <span style={{ fontSize: "11px", color: "#4A6A54", fontWeight: 500 }}>
+                <span style={{ fontSize: "11px", color: "#1C0D0A", fontWeight: 500 }}>
                   {item.text}
                 </span>
               </div>
@@ -473,8 +473,8 @@ export function ProductDetailsScreen() {
             onClick={() => setShowSpecs(!showSpecs)}
             style={{
               width: "100%",
-              background: "#F4F7F5",
-              border: "1px solid #E0EAE3",
+              background: "#FBFBFB",
+              border: "1px solid #EAEAEA",
               borderRadius: "12px",
               padding: "13px 14px",
               display: "flex",
@@ -488,7 +488,7 @@ export function ProductDetailsScreen() {
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <Info size={15} color={G} />
               <span style={{ fontSize: "13px", fontWeight: 700, color: "#1A2520" }}>
-                Technical Specifications
+                Spécifications Techniques
               </span>
             </div>
             <ChevronDown
@@ -501,8 +501,8 @@ export function ProductDetailsScreen() {
           {showSpecs && (
             <div
               style={{
-                background: "#F4F7F5",
-                border: "1px solid #E0EAE3",
+                background: "#FBFBFB",
+                border: "1px solid #EAEAEA",
                 borderRadius: "12px",
                 overflow: "hidden",
                 marginBottom: "14px",
@@ -516,11 +516,11 @@ export function ProductDetailsScreen() {
                     justifyContent: "space-between",
                     alignItems: "center",
                     padding: "10px 14px",
-                    borderBottom: i < specs.length - 1 ? "1px solid #E0EAE3" : "none",
+                    borderBottom: i < specs.length - 1 ? "1px solid #EAEAEA" : "none",
                     background: i % 2 === 0 ? "white" : "#F9FBFA",
                   }}
                 >
-                  <span style={{ fontSize: "12px", color: "#7A8A7E" }}>{s.label}</span>
+                  <span style={{ fontSize: "12px", color: "#757575" }}>{s.label}</span>
                   <span style={{ fontSize: "12px", fontWeight: 600, color: "#1A2520" }}>
                     {s.value}
                   </span>
@@ -537,7 +537,7 @@ export function ProductDetailsScreen() {
       <div
         style={{
           background: "white",
-          borderTop: "1px solid #E8EDE8",
+          borderTop: "1px solid #EAEAEA",
           padding: "12px 16px",
           boxShadow: "0 -4px 20px rgba(0,0,0,0.08)",
         }}
@@ -545,7 +545,7 @@ export function ProductDetailsScreen() {
         {/* Line total */}
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
           <span style={{ fontSize: "12px", color: "#8A9A8E" }}>
-            {qty} units × {currentPrice.toFixed(2)}€ HT
+            {qty} unités × {currentPrice.toFixed(2)}€ HT
           </span>
           <div style={{ display: "flex", alignItems: "baseline", gap: "3px" }}>
             <span style={{ fontSize: "18px", fontWeight: 800, color: G }}>{totalPrice}€</span>
@@ -560,9 +560,9 @@ export function ProductDetailsScreen() {
               display: "flex",
               alignItems: "center",
               gap: "0",
-              background: "#F4F7F5",
+              background: "#FBFBFB",
               borderRadius: "12px",
-              border: "1.5px solid #D8E4D8",
+              border: "1.5px solid #EAEAEA",
               overflow: "hidden",
               height: "48px",
             }}
@@ -596,8 +596,8 @@ export function ProductDetailsScreen() {
                 color: "#1A2520",
                 fontFamily: "Inter, sans-serif",
                 height: "100%",
-                borderLeft: "1px solid #D8E4D8",
-                borderRight: "1px solid #D8E4D8",
+                borderLeft: "1px solid #EAEAEA",
+                borderRight: "1px solid #EAEAEA",
               }}
             />
             <button
@@ -620,7 +620,7 @@ export function ProductDetailsScreen() {
           <button
             style={{
               flex: 1,
-              background: `linear-gradient(135deg, ${G} 0%, #143D28 100%)`,
+              background: `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`,
               color: "white",
               border: "none",
               borderRadius: "12px",
@@ -633,11 +633,11 @@ export function ProductDetailsScreen() {
               alignItems: "center",
               justifyContent: "center",
               gap: "8px",
-              boxShadow: "0 4px 14px rgba(28,92,56,0.35)",
+              boxShadow: "0 8px 22px rgba(241, 88, 8, 0.25)",
             }}
           >
             <ShoppingCart size={17} />
-            Add to Cart
+            Ajouter au panier
             <ChevronRight size={14} />
           </button>
         </div>

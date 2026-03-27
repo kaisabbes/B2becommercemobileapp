@@ -14,8 +14,16 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const G = "#1C5C38"; // Forest Green
-const WOOD = "#A97C50"; // Wood accent
+const THEME = {
+  primary: "#FC4F00", // MPBS orange (seen on mpbs.com.tn)
+  primary2: "#f5b99d",
+  ink: "#1C0D0A",
+  muted: "#757575",
+  surface: "#FFFFFF",
+  surface2: "#FBFBFB",
+  border: "#EAEAEA",
+  soft: "#FEF1E4",
+};
 
 function InputField({
   icon: Icon,
@@ -39,7 +47,7 @@ function InputField({
         style={{
           fontSize: "11px",
           fontWeight: 600,
-          color: "#5A6A5E",
+          color: THEME.muted,
           letterSpacing: "0.8px",
           textTransform: "uppercase",
           display: "block",
@@ -52,15 +60,15 @@ function InputField({
         style={{
           display: "flex",
           alignItems: "center",
-          background: "#F4F7F5",
-          border: "1.5px solid #E0EAE3",
+          background: THEME.surface,
+          border: `1.5px solid ${THEME.border}`,
           borderRadius: "10px",
           padding: "0 14px",
           gap: "10px",
           height: "48px",
         }}
       >
-        <Icon size={16} color="#8FAA94" />
+        <Icon size={16} color={THEME.muted} />
         <input
           type={isPassword ? (show ? "text" : "password") : type}
           placeholder={placeholder}
@@ -70,7 +78,7 @@ function InputField({
             border: "none",
             outline: "none",
             fontSize: "14px",
-            color: "#1A2520",
+            color: THEME.ink,
             fontFamily: "Inter, sans-serif",
           }}
         />
@@ -80,9 +88,9 @@ function InputField({
             style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
           >
             {show ? (
-              <EyeOff size={16} color="#8FAA94" />
+              <EyeOff size={16} color={THEME.muted} />
             ) : (
-              <Eye size={16} color="#8FAA94" />
+              <Eye size={16} color={THEME.muted} />
             )}
           </button>
         )}
@@ -102,14 +110,14 @@ export function LoginScreen() {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        background: "white",
+        background: THEME.surface2,
         overflowY: "auto",
       }}
     >
       {/* Header */}
       <div
         style={{
-          background: `linear-gradient(145deg, ${G} 0%, #143D28 100%)`,
+          background: `linear-gradient(145deg, ${THEME.primary} 0%, ${THEME.primary2} 100%)`,
           padding: "32px 24px 28px",
           position: "relative",
           overflow: "hidden",
@@ -145,7 +153,8 @@ export function LoginScreen() {
             style={{
               width: "36px",
               height: "36px",
-              background: WOOD,
+              background: "rgba(255,255,255,0.18)",
+              border: "1px solid rgba(255,255,255,0.25)",
               borderRadius: "8px",
               display: "flex",
               alignItems: "center",
@@ -160,48 +169,32 @@ export function LoginScreen() {
           </div>
           <div>
             <div style={{ color: "white", fontSize: "18px", fontWeight: 700, letterSpacing: "-0.3px" }}>
-              PanelPro B2B
+              MPBS B2B
             </div>
             <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "11px", letterSpacing: "1px" }}>
-              WOOD PANEL WHOLESALE
+              PANNEAUX & SOLUTIONS INTÉRIEUR
             </div>
           </div>
         </div>
 
         <div style={{ marginTop: "16px", color: "rgba(255,255,255,0.8)", fontSize: "13px" }}>
-          Professional portal for construction pros & wholesalers
+          Portail professionnel pour partenaires & revendeurs
         </div>
-
-        {/* Secure badge */}
-        <div
-          style={{
-            marginTop: "14px",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "5px",
-            background: "rgba(255,255,255,0.12)",
-            borderRadius: "20px",
-            padding: "4px 10px",
-          }}
-        >
-          <ShieldCheck size={12} color="rgba(255,255,255,0.9)" />
-          <span style={{ color: "rgba(255,255,255,0.9)", fontSize: "11px", fontWeight: 500 }}>
-            Secure SSL Connection
-          </span>
-        </div>
+        
       </div>
 
       {/* Tabs */}
       <div
         style={{
           display: "flex",
-          background: "#F4F7F5",
+          background: THEME.surface,
           margin: "20px 20px 0",
           borderRadius: "12px",
           padding: "4px",
+          border: `1px solid ${THEME.border}`,
         }}
       >
-        {(["login", "register"] as const).map((t) => (
+        {([["login", "Connexion"], ["register", "Créer un compte"]] as const).map(([t, lbl]) => (
           <button
             key={t}
             onClick={() => setTab(t)}
@@ -215,12 +208,12 @@ export function LoginScreen() {
               fontSize: "13px",
               fontWeight: 600,
               transition: "all 0.2s",
-              background: tab === t ? "white" : "transparent",
-              color: tab === t ? G : "#8A9A8E",
+              background: tab === t ? THEME.soft : "transparent",
+              color: tab === t ? THEME.ink : THEME.muted,
               boxShadow: tab === t ? "0 1px 4px rgba(0,0,0,0.1)" : "none",
             }}
           >
-            {t === "login" ? "Sign In" : "Create Account"}
+            {lbl}
           </button>
         ))}
       </div>
@@ -233,32 +226,32 @@ export function LoginScreen() {
               style={{
                 fontSize: "20px",
                 fontWeight: 700,
-                color: "#1A2520",
+                color: THEME.ink,
                 marginBottom: "4px",
               }}
             >
-              Welcome back
+              Bon retour
             </h2>
-            <p style={{ fontSize: "13px", color: "#7A8A7E", marginBottom: "22px" }}>
-              Access your professional account
+            <p style={{ fontSize: "13px", color: THEME.muted, marginBottom: "22px" }}>
+              Accédez à votre compte professionnel
             </p>
 
-            <InputField icon={Mail} label="Professional Email" placeholder="name@company.fr" type="email" />
-            <InputField icon={Lock} label="Password" placeholder="Enter your password" type="password" />
+            <InputField icon={Mail} label="E-mail Professionnel" placeholder="nom@societe.fr" type="email" />
+            <InputField icon={Lock} label="Mot de passe" placeholder="Saisissez votre mot de passe" type="password" />
 
             <div style={{ textAlign: "right", marginBottom: "22px", marginTop: "-8px" }}>
               <button
                 style={{
                   background: "none",
                   border: "none",
-                  color: G,
+                  color: THEME.primary,
                   fontSize: "13px",
                   fontWeight: 500,
                   cursor: "pointer",
                   fontFamily: "Inter, sans-serif",
                 }}
               >
-                Forgot password?
+                Mot de passe oublié ?
               </button>
             </div>
 
@@ -266,7 +259,7 @@ export function LoginScreen() {
               onClick={() => navigate("/app")}
               style={{
                 width: "100%",
-                background: `linear-gradient(135deg, ${G} 0%, #143D28 100%)`,
+                background: `linear-gradient(135deg, ${THEME.primary} 0%, ${THEME.primary2} 100%)`,
                 color: "white",
                 border: "none",
                 borderRadius: "12px",
@@ -279,10 +272,10 @@ export function LoginScreen() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "8px",
-                boxShadow: "0 4px 16px rgba(28,92,56,0.35)",
+                boxShadow: "0 8px 22px rgba(241, 88, 8, 0.25)",
               }}
             >
-              Sign In to Portal
+              Se connecter au portail
               <ChevronRight size={18} />
             </button>
 
@@ -295,9 +288,9 @@ export function LoginScreen() {
                 margin: "20px 0",
               }}
             >
-              <div style={{ flex: 1, height: "1px", background: "#E8EDE8" }} />
-              <span style={{ fontSize: "12px", color: "#A0B0A5" }}>or</span>
-              <div style={{ flex: 1, height: "1px", background: "#E8EDE8" }} />
+              <div style={{ flex: 1, height: "1px", background: THEME.border }} />
+              <span style={{ fontSize: "12px", color: THEME.muted }}>ou</span>
+              <div style={{ flex: 1, height: "1px", background: THEME.border }} />
             </div>
 
             <button
@@ -305,8 +298,8 @@ export function LoginScreen() {
               style={{
                 width: "100%",
                 background: "transparent",
-                color: G,
-                border: `2px solid ${G}`,
+                color: THEME.ink,
+                border: `2px solid ${THEME.border}`,
                 borderRadius: "12px",
                 padding: "13px",
                 fontSize: "14px",
@@ -315,25 +308,25 @@ export function LoginScreen() {
                 fontFamily: "Inter, sans-serif",
               }}
             >
-              Request a Pro Account
+              Demander un compte Pro
             </button>
 
             {/* Info note */}
             <div
               style={{
                 marginTop: "20px",
-                background: "#F0F7F3",
-                border: "1px solid #C8DFD0",
+                background: THEME.soft,
+                border: `1px solid ${THEME.border}`,
                 borderRadius: "10px",
                 padding: "12px",
                 display: "flex",
                 gap: "10px",
               }}
             >
-              <ShieldCheck size={16} color={G} style={{ flexShrink: 0, marginTop: "1px" }} />
-              <p style={{ fontSize: "12px", color: "#4A6A54", lineHeight: "1.5", margin: 0 }}>
-                This portal is reserved for registered businesses. Prices shown are{" "}
-                <strong>excluding VAT (HT)</strong>.
+              <ShieldCheck size={16} color={THEME.primary} style={{ flexShrink: 0, marginTop: "1px" }} />
+              <p style={{ fontSize: "12px", color: THEME.ink, lineHeight: "1.5", margin: 0 }}>
+                Ce portail est réservé aux entreprises enregistrées. Les prix affichés sont{" "}
+                <strong>hors TVA (HT)</strong>.
               </p>
             </div>
           </>
@@ -343,22 +336,22 @@ export function LoginScreen() {
               style={{
                 fontSize: "20px",
                 fontWeight: 700,
-                color: "#1A2520",
+                color: THEME.ink,
                 marginBottom: "4px",
               }}
             >
-              Pro Account Request
+              Demande de compte Pro
             </h2>
-            <p style={{ fontSize: "13px", color: "#7A8A7E", marginBottom: "18px" }}>
-              Fill in your company details below
+            <p style={{ fontSize: "13px", color: THEME.muted, marginBottom: "18px" }}>
+              Remplissez les informations de votre société ci-dessous
             </p>
 
             {/* Validation info banner */}
             <div
               style={{
-                background: "#FFF8F0",
-                border: "1px solid #F0D4A8",
-                borderLeft: `4px solid ${WOOD}`,
+                background: THEME.soft,
+                border: `1px solid ${THEME.border}`,
+                borderLeft: `4px solid ${THEME.primary}`,
                 borderRadius: "10px",
                 padding: "12px",
                 marginBottom: "18px",
@@ -366,37 +359,37 @@ export function LoginScreen() {
                 gap: "10px",
               }}
             >
-              <ShieldCheck size={15} color={WOOD} style={{ flexShrink: 0, marginTop: "1px" }} />
-              <p style={{ fontSize: "12px", color: "#7A5A30", lineHeight: "1.5", margin: 0 }}>
-                <strong>Verification required:</strong> Your pro account will be validated by our team to access wholesale prices and volume discounts.
+              <ShieldCheck size={15} color={THEME.primary} style={{ flexShrink: 0, marginTop: "1px" }} />
+              <p style={{ fontSize: "12px", color: THEME.ink, lineHeight: "1.5", margin: 0 }}>
+                <strong>Vérification requise :</strong> Votre compte pro sera validé par notre équipe pour accéder aux prix grossiste et remises sur volume.
               </p>
             </div>
 
-            <InputField icon={Building2} label="Company Name" placeholder="Your Company SAS" />
+            <InputField icon={Building2} label="Nom de la société" placeholder="Votre Société SAS" />
             <InputField
               icon={Hash}
-              label="SIRET Number"
+              label="Numéro SIRET"
               placeholder="000 000 000 00000"
               type="text"
             />
             <InputField
               icon={FileText}
-              label="VAT Number (TVA)"
+              label="Numéro TVA"
               placeholder="FR 00 000000000"
             />
-            <InputField icon={User} label="Contact Name" placeholder="First and Last Name" />
+            <InputField icon={User} label="Nom du contact" placeholder="Prénom et Nom" />
             <InputField
               icon={Mail}
-              label="Professional Email"
-              placeholder="name@company.fr"
+              label="E-mail Professionnel"
+              placeholder="nom@societe.fr"
               type="email"
             />
-            <InputField icon={Phone} label="Phone Number" placeholder="+33 6 00 00 00 00" />
+            <InputField icon={Phone} label="Numéro de téléphone" placeholder="+33 6 00 00 00 00" />
 
             <button
               style={{
                 width: "100%",
-                background: `linear-gradient(135deg, ${G} 0%, #143D28 100%)`,
+                background: `linear-gradient(135deg, ${THEME.primary} 0%, ${THEME.primary2} 100%)`,
                 color: "white",
                 border: "none",
                 borderRadius: "12px",
@@ -409,11 +402,11 @@ export function LoginScreen() {
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "8px",
-                boxShadow: "0 4px 16px rgba(28,92,56,0.35)",
+                boxShadow: "0 8px 22px rgba(241, 88, 8, 0.25)",
                 marginTop: "6px",
               }}
             >
-              Submit Account Request
+              Soumettre la demande de compte
               <ChevronRight size={18} />
             </button>
 
@@ -421,11 +414,11 @@ export function LoginScreen() {
               style={{
                 textAlign: "center",
                 fontSize: "11px",
-                color: "#A0B0A5",
+                color: THEME.muted,
                 marginTop: "14px",
               }}
             >
-              By submitting, you agree to our Terms of Service & Privacy Policy
+              En soumettant, vous acceptez nos Conditions Générales & Politique de confidentialité
             </p>
           </>
         )}
