@@ -8,6 +8,10 @@ const navItems = [
   { label: "Profil", icon: User, path: "/app/profile" },
 ];
 
+const G = "#f4e9da";
+const WOOD = "#F5B99D";
+const A = "#e1590a";
+
 export function BottomNav() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -51,24 +55,11 @@ export function BottomNav() {
             }}
           >
             {/* Active indicator */}
-            {active && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  width: "32px",
-                  height: "3px",
-                  background: "#FC4F00",
-                  borderRadius: "0 0 3px 3px",
-                }}
-              />
-            )}
+            
             <div style={{ position: "relative" }}>
               <Icon
                 size={22}
-                color={active ? "#FC4F00" : "#8A9A8E"}
+                color={active ? WOOD : "#8A9A8E"}
                 strokeWidth={active ? 2.5 : 1.8}
               />
               {item.badge && (
@@ -97,7 +88,7 @@ export function BottomNav() {
               style={{
                 fontSize: "10px",
                 fontWeight: active ? 600 : 400,
-                color: active ? "#FC4F00" : "#8A9A8E",
+                color: active ? WOOD : "#8A9A8E",
                 letterSpacing: "0.2px",
               }}
             >

@@ -21,7 +21,7 @@ export default function App() {
         {/* Status bar */}
         <div
           className="flex items-center justify-between px-6 pt-3 pb-1"
-          style={{ background: "#ed793d", color: "white" }}
+          style={{ background: "#f6ddcc", color: "black" }}
         >
           <span style={{ fontSize: "12px", fontWeight: 600 }}>9:41</span>
           <div
@@ -37,13 +37,13 @@ export default function App() {
             }}
           />
           <div className="flex items-center gap-1">
-            <svg width="16" height="12" viewBox="0 0 16 12" fill="white">
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="black">
               <rect x="0" y="4" width="3" height="8" rx="1" />
               <rect x="4.5" y="2.5" width="3" height="9.5" rx="1" />
               <rect x="9" y="1" width="3" height="11" rx="1" />
               <rect x="13.5" y="0" width="2.5" height="12" rx="1" />
             </svg>
-            <svg width="16" height="12" viewBox="0 0 24 18" fill="white">
+            <svg width="16" height="12" viewBox="0 0 24 18" fill="black">
               <path d="M12 4.5C9.2 4.5 6.7 5.6 4.8 7.4L3 5.6C5.4 3.4 8.5 2 12 2s6.6 1.4 9 3.6L19.2 7.4C17.3 5.6 14.8 4.5 12 4.5z" />
               <path d="M12 9.5c-1.7 0-3.2.7-4.3 1.8L6 9.5C7.5 8.1 9.7 7.2 12 7.2s4.5.9 6 2.3l-1.7 1.8C15.2 10.2 13.7 9.5 12 9.5z" />
               <circle cx="12" cy="15" r="2" />
@@ -53,7 +53,7 @@ export default function App() {
                 style={{
                   width: "22px",
                   height: "11px",
-                  border: "1.5px solid rgba(255,255,255,0.5)",
+                  border: "1.5px solid black",
                   borderRadius: "2px",
                   padding: "1px",
                   display: "flex",
@@ -64,7 +64,7 @@ export default function App() {
                   style={{
                     width: "70%",
                     height: "100%",
-                    background: "white",
+                    background: "black",
                     borderRadius: "1px",
                   }}
                 />

@@ -18,8 +18,9 @@ import {
   BarChart2,
 } from "lucide-react";
 
-const G = "#FC4F00";
+const G = "#f4e9da";
 const WOOD = "#F5B99D";
+const A = "#FC4F00";
 
 const menuSections = [
   {
@@ -39,7 +40,7 @@ const menuSections = [
         icon: ClipboardList,
         label: "Historique & Factures",
         sub: "Consulter et télécharger vos factures",
-        color: G,
+        color: WOOD,
         badge: null,
         badgeColor: null,
         hasDownload: true,
@@ -95,13 +96,30 @@ const menuSections = [
 ];
 
 const stats = [
-  { label: "Total commandes", value: "147", icon: ClipboardList, color: G },
-  { label: "Dépenses YTD HT", value: "€87,4K", icon: TrendingUp, color: WOOD },
-  { label: "Points fidélité", value: "2 340", icon: Star, color: "#F59E0B" },
+  {
+    label: "Total commandes",
+    value: "147",
+    icon: ClipboardList,
+    color: WOOD,
+  },
+  {
+    label: "Dépenses YTD HT",
+    value: "87,4K TND",
+    icon: TrendingUp,
+    color: WOOD,
+  },
+  {
+    label: "Points fidélité",
+    value: "2 340",
+    icon: Star,
+    color: "#F59E0B",
+  },
 ];
 
 export function ProfileScreen() {
-  const [activeCard, setActiveCard] = useState<string | null>(null);
+  const [activeCard, setActiveCard] = useState<string | null>(
+    null,
+  );
 
   return (
     <div
@@ -148,9 +166,20 @@ export function ProfileScreen() {
           />
 
           <div
-            style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", position: "relative" }}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              position: "relative",
+            }}
           >
-            <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "14px",
+                alignItems: "center",
+              }}
+            >
               {/* Avatar */}
               <div style={{ position: "relative" }}>
                 <div
@@ -185,10 +214,23 @@ export function ProfileScreen() {
               </div>
 
               <div>
-                <div style={{ color: "white", fontSize: "18px", fontWeight: 800, lineHeight: "1.2" }}>
+                <div
+                  style={{
+                    color: "darkslategray",
+                    fontSize: "18px",
+                    fontWeight: 800,
+                    lineHeight: "1.2",
+                  }}
+                >
                   Sofiene Sellami
                 </div>
-                <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "13px", marginTop: "1px" }}>
+                <div
+                  style={{
+                    color: "black",
+                    fontSize: "13px",
+                    marginTop: "1px",
+                  }}
+                >
                   MPBS Group
                 </div>
                 {/* Premium badge */}
@@ -198,13 +240,20 @@ export function ProfileScreen() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "5px",
-                background: `linear-gradient(120deg, ${WOOD} 0%, #FF8848 100%)`,
+                    background: `linear-gradient(120deg, ${WOOD} 0%, ${WOOD} 100%)`,
                     borderRadius: "20px",
                     padding: "4px 10px",
                   }}
                 >
                   <Award size={11} color="white" />
-                  <span style={{ color: "white", fontSize: "10px", fontWeight: 700, letterSpacing: "0.5px" }}>
+                  <span
+                    style={{
+                      color: "white",
+                      fontSize: "10px",
+                      fontWeight: 700,
+                      letterSpacing: "0.5px",
+                    }}
+                  >
                     GROUPE CLIENT PREMIUM
                   </span>
                 </div>
@@ -225,12 +274,19 @@ export function ProfileScreen() {
                 cursor: "pointer",
               }}
             >
-              <LogOut size={16} color="rgba(255,255,255,0.8)" />
+              <LogOut size={16} color="black" />
             </button>
           </div>
 
           {/* B2B Info pills */}
-          <div style={{ display: "flex", gap: "8px", marginTop: "14px", position: "relative" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "8px",
+              marginTop: "14px",
+              position: "relative",
+            }}
+          >
             {[
               { label: "SIRET: 123 456 789 00012" },
               { label: "TVA: FR 12 345678900" },
@@ -246,8 +302,14 @@ export function ProfileScreen() {
                   gap: "5px",
                 }}
               >
-                <ShieldCheck size={10} color="rgba(255,255,255,0.7)" />
-                <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.85)", fontWeight: 500 }}>
+                <ShieldCheck size={10} color={WOOD} />
+                <span
+                  style={{
+                    fontSize: "10px",
+                    color: "gray",
+                    fontWeight: 500,
+                  }}
+                >
                   {p.label}
                 </span>
               </div>
@@ -256,7 +318,13 @@ export function ProfileScreen() {
         </div>
 
         {/* Stats row */}
-        <div style={{ display: "flex", gap: "8px", padding: "14px 14px 0" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "8px",
+            padding: "14px 14px 0",
+          }}
+        >
           {stats.map((s) => (
             <div
               key={s.label}
@@ -286,8 +354,23 @@ export function ProfileScreen() {
               >
                 <s.icon size={15} color={s.color} />
               </div>
-              <div style={{ fontSize: "14px", fontWeight: 800, color: "#1A2520" }}>{s.value}</div>
-              <div style={{ fontSize: "9px", color: "#8A9A8E", fontWeight: 500, textAlign: "center" }}>
+              <div
+                style={{
+                  fontSize: "14px",
+                  fontWeight: 800,
+                  color: "#1A2520",
+                }}
+              >
+                {s.value}
+              </div>
+              <div
+                style={{
+                  fontSize: "9px",
+                  color: "#8A9A8E",
+                  fontWeight: 500,
+                  textAlign: "center",
+                }}
+              >
                 {s.label}
               </div>
             </div>
@@ -305,36 +388,91 @@ export function ProfileScreen() {
             boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
           }}
         >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "7px" }}>
-              <BarChart2 size={14} color={G} />
-              <span style={{ fontSize: "12px", fontWeight: 700, color: "#1A2520" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "10px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "7px",
+              }}
+            >
+              <BarChart2 size={14} color={WOOD} />
+              <span
+                style={{
+                  fontSize: "12px",
+                  fontWeight: 700,
+                  color: "#1A2520",
+                }}
+              >
                 Activité d'achat — 2025
               </span>
             </div>
-            <span style={{ fontSize: "11px", color: "#8A9A8E" }}>Mensuel HT (€)</span>
+            <span
+              style={{ fontSize: "11px", color: "#8A9A8E" }}
+            >
+              Mensuel HT (TND)
+            </span>
           </div>
-          <div style={{ display: "flex", alignItems: "flex-end", gap: "4px", height: "44px" }}>
-            {[35, 58, 42, 75, 90, 65, 80, 100, 70, 88, 95, 60].map((h, i) => (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              gap: "4px",
+              height: "44px",
+            }}
+          >
+            {[
+              35, 58, 42, 75, 90, 65, 80, 100, 70, 88, 95, 60,
+            ].map((h, i) => (
               <div
                 key={i}
                 style={{
                   flex: 1,
                   height: `${h}%`,
                   background:
-                    i === 8
-                      ? G
-                      : i > 8
-                      ? "#F7D8C2"
-                      : `${G}4D`,
+                    i === 8 ? G : i > 8 ? "#F7D8C2" : `${G}4D`,
                   borderRadius: "3px 3px 0 0",
                 }}
               />
             ))}
           </div>
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: "4px" }}>
-            {["Jan", "Fév", "Mar", "Avr", "Mai", "Jun", "Jul", "Aoû", "Sep", "Oct", "Nov", "Déc"].map((m, i) => (
-              <div key={i} style={{ flex: 1, textAlign: "center", fontSize: "9px", color: "#A0B0A5" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "4px",
+            }}
+          >
+            {[
+              "Jan",
+              "Fév",
+              "Mar",
+              "Avr",
+              "Mai",
+              "Jun",
+              "Jul",
+              "Aoû",
+              "Sep",
+              "Oct",
+              "Nov",
+              "Déc",
+            ].map((m, i) => (
+              <div
+                key={i}
+                style={{
+                  flex: 1,
+                  textAlign: "center",
+                  fontSize: "9px",
+                  color: "#A0B0A5",
+                }}
+              >
                 {m}
               </div>
             ))}
@@ -343,7 +481,10 @@ export function ProfileScreen() {
 
         {/* Menu sections */}
         {menuSections.map((section) => (
-          <div key={section.title} style={{ padding: "14px 14px 0" }}>
+          <div
+            key={section.title}
+            style={{ padding: "14px 14px 0" }}
+          >
             <div
               style={{
                 fontSize: "10px",
@@ -378,10 +519,15 @@ export function ProfileScreen() {
                     alignItems: "center",
                     gap: "12px",
                     padding: "13px 14px",
-                    background: activeCard === item.id ? "#FEF1E4" : "white",
+                    background:
+                      activeCard === item.id
+                        ? "#FEF1E4"
+                        : "white",
                     border: "none",
                     borderBottom:
-                      idx < section.items.length - 1 ? "1px solid #EAEAEA" : "none",
+                      idx < section.items.length - 1
+                        ? "1px solid #EAEAEA"
+                        : "none",
                     cursor: "pointer",
                     textAlign: "left",
                     fontFamily: "Inter, sans-serif",
@@ -406,16 +552,34 @@ export function ProfileScreen() {
 
                   {/* Label */}
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: "13px", fontWeight: 700, color: "#1A2520" }}>
+                    <div
+                      style={{
+                        fontSize: "13px",
+                        fontWeight: 700,
+                        color: "#1A2520",
+                      }}
+                    >
                       {item.label}
                     </div>
-                    <div style={{ fontSize: "11px", color: "#8A9A8E", marginTop: "1px" }}>
+                    <div
+                      style={{
+                        fontSize: "11px",
+                        color: "#8A9A8E",
+                        marginTop: "1px",
+                      }}
+                    >
                       {item.sub}
                     </div>
                   </div>
 
                   {/* Right side */}
-                  <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                    }}
+                  >
                     {item.badge && (
                       <div
                         style={{
@@ -467,7 +631,13 @@ export function ProfileScreen() {
               gap: "14px",
             }}
           >
-            <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: "14px",
+                alignItems: "center",
+              }}
+            >
               {/* Sales rep photo */}
               <div
                 style={{
@@ -482,18 +652,41 @@ export function ProfileScreen() {
                 <img
                   src="https://images.unsplash.com/photo-1688241320695-6ca991df8818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200"
                   alt="Sales Rep"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
                 />
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontSize: "15px", fontWeight: 800, color: "#1A2520" }}>
+                <div
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 800,
+                    color: "#1A2520",
+                  }}
+                >
                   Pierre Lefebvre
                 </div>
-                <div style={{ fontSize: "12px", color: "#7A8A7E", marginTop: "2px" }}>
+                <div
+                  style={{
+                    fontSize: "12px",
+                    color: "#7A8A7E",
+                    marginTop: "2px",
+                  }}
+                >
                   Responsable Grands Comptes B2B
                 </div>
                 {/* Stars / availability */}
-                <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "5px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    marginTop: "5px",
+                  }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -512,11 +705,24 @@ export function ProfileScreen() {
                         background: "#FF8848",
                       }}
                     />
-                    <span style={{ fontSize: "10px", color: G, fontWeight: 600 }}>Disponible maintenant</span>
+                    <span
+                      style={{
+                        fontSize: "10px",
+                        color: "gray",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Disponible maintenant
+                    </span>
                   </div>
                   <div style={{ display: "flex" }}>
                     {[1, 2, 3, 4, 5].map((s) => (
-                      <Star key={s} size={10} fill={WOOD} color={WOOD} />
+                      <Star
+                        key={s}
+                        size={10}
+                        fill={WOOD}
+                        color={WOOD}
+                      />
                     ))}
                   </div>
                 </div>
@@ -524,8 +730,18 @@ export function ProfileScreen() {
             </div>
 
             {/* Expertise chips */}
-            <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-              {["Spécialiste MDF", "Grands volumes", "Devis sur mesure"].map((chip) => (
+            <div
+              style={{
+                display: "flex",
+                gap: "6px",
+                flexWrap: "wrap",
+              }}
+            >
+              {[
+                "Spécialiste MDF",
+                "Grands volumes",
+                "Devis sur mesure",
+              ].map((chip) => (
                 <div
                   key={chip}
                   style={{
@@ -544,11 +760,17 @@ export function ProfileScreen() {
             </div>
 
             {/* Action buttons */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1fr 1fr",
+                gap: "8px",
+              }}
+            >
               <a
                 href="tel:+33123456789"
                 style={{
-                  background: `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`,
+                  background: `linear-gradient(135deg, ${WOOD} 0%, ${WOOD} 100%)`,
                   color: "white",
                   borderRadius: "12px",
                   padding: "12px",
@@ -560,7 +782,8 @@ export function ProfileScreen() {
                   fontSize: "13px",
                   fontWeight: 700,
                   fontFamily: "Inter, sans-serif",
-                  boxShadow: "0 8px 22px rgba(241, 88, 8, 0.25)",
+                  boxShadow:
+                    "0 8px 22px rgba(241, 88, 8, 0.25)",
                 }}
               >
                 <Phone size={15} />
@@ -570,7 +793,7 @@ export function ProfileScreen() {
                 style={{
                   background: "#FBFBFB",
                   border: `1.5px solid ${G}40`,
-                  color: G,
+                  color: WOOD,
                   borderRadius: "12px",
                   padding: "12px",
                   display: "flex",
@@ -601,14 +824,29 @@ export function ProfileScreen() {
               }}
             >
               <div>
-                <div style={{ fontSize: "10px", color: "#A0907A", fontWeight: 600, letterSpacing: "0.5px" }}>
+                <div
+                  style={{
+                    fontSize: "10px",
+                    color: "#A0907A",
+                    fontWeight: 600,
+                    letterSpacing: "0.5px",
+                  }}
+                >
                   LIGNE DIRECTE
                 </div>
-                <div style={{ fontSize: "14px", fontWeight: 700, color: "#1A2520" }}>
+                <div
+                  style={{
+                    fontSize: "14px",
+                    fontWeight: 700,
+                    color: "#1A2520",
+                  }}
+                >
                   +33 1 23 45 67 89
                 </div>
               </div>
-              <div style={{ fontSize: "11px", color: "#A0907A" }}>
+              <div
+                style={{ fontSize: "11px", color: "#A0907A" }}
+              >
                 Lun–Ven · 8h–18h
               </div>
             </div>

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const THEME = {
-  primary: "#FC4F00", // MPBS orange (seen on mpbs.com.tn)
+  primary: "#f4e9da", // MPBS orange (seen on mpbs.com.tn)
   primary2: "#f5b99d",
   ink: "#1C0D0A",
   muted: "#757575",
@@ -117,6 +117,7 @@ export function LoginScreen() {
       {/* Header */}
       <div
         style={{
+          flexShrink: 0,
           background: `linear-gradient(145deg, ${THEME.primary} 0%, ${THEME.primary2} 100%)`,
           padding: "32px 24px 28px",
           position: "relative",
@@ -151,9 +152,9 @@ export function LoginScreen() {
         <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "4px" }}>
           <div
             style={{
-              width: "36px",
+              width: "45px",
               height: "36px",
-              background: "rgba(255,255,255,0.18)",
+              background: "white",
               border: "1px solid rgba(255,255,255,0.25)",
               borderRadius: "8px",
               display: "flex",
@@ -161,23 +162,27 @@ export function LoginScreen() {
               justifyContent: "center",
             }}
           >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="6" width="20" height="3" rx="1" fill="white" />
-              <rect x="2" y="11" width="20" height="3" rx="1" fill="rgba(255,255,255,0.7)" />
-              <rect x="2" y="16" width="20" height="3" rx="1" fill="rgba(255,255,255,0.5)" />
-            </svg>
+            <img 
+              src="src/app/components/images/mpbs.png" 
+              alt="MPBS Logo" 
+              style={{ 
+                width: "100%", 
+                height: "100%", 
+                objectFit: "contain"
+              }} 
+            />
           </div>
           <div>
-            <div style={{ color: "white", fontSize: "18px", fontWeight: 700, letterSpacing: "-0.3px" }}>
+            <div style={{ color: "darkslategray", fontSize: "18px", fontWeight: 700, letterSpacing: "-0.3px" }}>
               MPBS B2B
             </div>
-            <div style={{ color: "rgba(255,255,255,0.6)", fontSize: "11px", letterSpacing: "1px" }}>
+            <div style={{ color: "black", fontSize: "11px", letterSpacing: "1px" }}>
               PANNEAUX & SOLUTIONS INTÉRIEUR
             </div>
           </div>
         </div>
 
-        <div style={{ marginTop: "16px", color: "rgba(255,255,255,0.8)", fontSize: "13px" }}>
+        <div style={{ marginTop: "16px", color: "black", fontSize: "13px" }}>
           Portail professionnel pour partenaires & revendeurs
         </div>
         
@@ -186,6 +191,7 @@ export function LoginScreen() {
       {/* Tabs */}
       <div
         style={{
+          flexShrink:0,
           display: "flex",
           background: THEME.surface,
           margin: "20px 20px 0",
@@ -244,7 +250,7 @@ export function LoginScreen() {
                 style={{
                   background: "none",
                   border: "none",
-                  color: THEME.primary,
+                  color: THEME.primary2,
                   fontSize: "13px",
                   fontWeight: 500,
                   cursor: "pointer",
@@ -259,7 +265,7 @@ export function LoginScreen() {
               onClick={() => navigate("/app")}
               style={{
                 width: "100%",
-                background: `linear-gradient(135deg, ${THEME.primary} 0%, ${THEME.primary2} 100%)`,
+                background: `linear-gradient(135deg, ${THEME.primary2} 0%, ${THEME.primary2} 100%)`,
                 color: "white",
                 border: "none",
                 borderRadius: "12px",
@@ -323,7 +329,7 @@ export function LoginScreen() {
                 gap: "10px",
               }}
             >
-              <ShieldCheck size={16} color={THEME.primary} style={{ flexShrink: 0, marginTop: "1px" }} />
+              <ShieldCheck size={16} color={THEME.primary2} style={{ flexShrink: 0, marginTop: "1px" }} />
               <p style={{ fontSize: "12px", color: THEME.ink, lineHeight: "1.5", margin: 0 }}>
                 Ce portail est réservé aux entreprises enregistrées. Les prix affichés sont{" "}
                 <strong>hors TVA (HT)</strong>.
@@ -359,7 +365,7 @@ export function LoginScreen() {
                 gap: "10px",
               }}
             >
-              <ShieldCheck size={15} color={THEME.primary} style={{ flexShrink: 0, marginTop: "1px" }} />
+              <ShieldCheck size={15} color={THEME.primary2} style={{ flexShrink: 0, marginTop: "1px" }} />
               <p style={{ fontSize: "12px", color: THEME.ink, lineHeight: "1.5", margin: 0 }}>
                 <strong>Vérification requise :</strong> Votre compte pro sera validé par notre équipe pour accéder aux prix grossiste et remises sur volume.
               </p>
@@ -389,7 +395,7 @@ export function LoginScreen() {
             <button
               style={{
                 width: "100%",
-                background: `linear-gradient(135deg, ${THEME.primary} 0%, ${THEME.primary2} 100%)`,
+                background: `linear-gradient(135deg, ${THEME.primary2} 0%, ${THEME.primary2} 100%)`,
                 color: "white",
                 border: "none",
                 borderRadius: "12px",

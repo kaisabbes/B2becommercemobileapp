@@ -11,92 +11,303 @@ import {
   Package,
 } from "lucide-react";
 
-const G = "#FC4F00";
+const G = "#f4e9da";
 const WOOD = "#F5B99D";
+const A = "#FC4F00";
 
 const categories = [
-  { id: "all", label: "Tous les produits" },
-  { id: "mdf", label: "MDF" },
-  { id: "plywood", label: "Contreplaqué" },
-  { id: "melamine", label: "Mélaminé" },
-  { id: "osb", label: "OSB" },
-  { id: "hdf", label: "HDF" },
-  { id: "chipboard", label: "Aggloméré" },
+  { id: "all", label: "Nos Panneaux" },
+  { id: "melamine", label: "Panneaux mélaminés" },
+  { id: "plaques", label: "Panneaux plaqués" },
+  { id: "acryliques", label: "Panneaux acryliques" },
+  { id: "high-gloss", label: "Panneaux High Gloss" },
 ];
 
 const products = [
+  // Panneaux mélaminés (6)
   {
     id: "1",
-    name: "Panneau MDF Standard",
+    name: "CREME 3012",
     thickness: "18mm",
-    sku: "MDF-18-2440",
+    sku: "CREME-3012",
     price: "15.50",
     unit: "m²",
-    category: "mdf",
+    category: "melamine",
     stock: true,
-    image: "https://images.unsplash.com/photo-1564691848938-d0fc26235733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
-    tag: "Meilleure vente",
-  },
-  {
-    id: "2",
-    name: "Contreplaqué Bouleau",
-    thickness: "15mm",
-    sku: "PLY-15-1220",
-    price: "22.80",
-    unit: "m²",
-    category: "plywood",
-    stock: true,
-    image: "https://images.unsplash.com/photo-1672656319286-03f92b44abf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/CREME-3012.jpg",
     tag: null,
   },
   {
-    id: "3",
-    name: "Panneau OSB 3",
+    id: "2",
+    name: "WALNUT 2322",
     thickness: "18mm",
-    sku: "OSB-18-2500",
-    price: "11.20",
+    sku: "WALNUT-2322",
+    price: "16.80",
     unit: "m²",
-    category: "osb",
+    category: "melamine",
     stock: true,
-    image: "https://images.unsplash.com/photo-1634397270735-1090b6c20c3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
-    tag: "Promo",
+    image: "https://mpbs.com.tn/wp-content/uploads/2026/03/Walnut-2322-.jpg",
+    tag: "Premium",
+  },
+  {
+    id: "3",
+    name: "LEON 3061",
+    thickness: "18mm",
+    sku: "LEON-3061",
+    price: "14.20",
+    unit: "m²",
+    category: "melamine",
+    stock: true,
+    image: "https://mpbs.com.tn/wp-content/uploads/2026/02/LEON-3061-min.jpg",
+    tag: null,
   },
   {
     id: "4",
-    name: "Panneau Mélaminé Blanc",
-    thickness: "16mm",
-    sku: "MEL-16-W-2440",
-    price: "18.90",
+    name: "BAREILLY 3062",
+    thickness: "18mm",
+    sku: "BAREILLY-3062",
+    price: "14.90",
     unit: "m²",
     category: "melamine",
-    stock: false,
-    image: "https://images.unsplash.com/photo-1655149588779-8c5402c968bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
+    stock: true,
+    image: "https://mpbs.com.tn/wp-content/uploads/2026/02/BAREILLY-3062-min.jpg",
     tag: null,
   },
   {
     id: "5",
-    name: "MDF Hydrofuge",
-    thickness: "22mm",
-    sku: "MDF-22-MR",
-    price: "19.40",
+    name: "TRUFFLE 3033",
+    thickness: "18mm",
+    sku: "TRUFFLE-3033",
+    price: "15.90",
     unit: "m²",
-    category: "mdf",
-    stock: true,
-    image: "https://images.unsplash.com/photo-1564691848938-d0fc26235733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
-    tag: null,
+    category: "melamine",
+    stock: false,
+    image: "https://mpbs.com.tn/wp-content/uploads/2025/10/TRUFFLE-3033.jpg",
+    tag: "Promo",
   },
   {
     id: "6",
-    name: "Contreplaqué Marin",
-    thickness: "12mm",
-    sku: "PLY-12-MAR",
-    price: "31.50",
+    name: "SLATE GREY 3013",
+    thickness: "18mm",
+    sku: "SLATE-GREY-3013",
+    price: "16.20",
     unit: "m²",
-    category: "plywood",
+    category: "melamine",
     stock: true,
-    image: "https://images.unsplash.com/photo-1681752972862-cc60f9126e47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400",
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/SLATE-GREY-3013.jpg",
+    tag: null,
+  },
+
+  // Panneaux plaqués (6)
+  {
+    id: "7",
+    name: "EBENE RC",
+    thickness: "18mm",
+    sku: "EBENE-RC",
+    price: "22.50",
+    unit: "m²",
+    category: "plaques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2021/04/EBENE-REC.jpg",
     tag: "Premium",
   },
+  {
+    id: "8",
+    name: "WENGE RC",
+    thickness: "18mm",
+    sku: "WENGE-RC",
+    price: "22.90",
+    unit: "m²",
+    category: "plaques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2021/03/vingue.jpg",
+    tag: null,
+  },
+  {
+    id: "9",
+    name: "MACASAR RC",
+    thickness: "18mm",
+    sku: "MACASAR-RC",
+    price: "23.40",
+    unit: "m²",
+    category: "plaques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2021/03/Makasar-rec.jpg",
+    tag: null,
+  },
+  {
+    id: "10",
+    name: "CHENE FIL RC",
+    thickness: "18mm",
+    sku: "CHENE-FIL-RC",
+    price: "21.90",
+    unit: "m²",
+    category: "plaques",
+    stock: false,
+    image: "http://mpbs.com.tn/wp-content/uploads/2021/03/Chene-FAF-Rec.jpg",
+    tag: null,
+  },
+  {
+    id: "11",
+    name: "FRÊNE FIL",
+    thickness: "18mm",
+    sku: "FRENE-FIL",
+    price: "22.10",
+    unit: "m²",
+    category: "plaques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2021/03/Frene-FAF.jpg",
+    tag: null,
+  },
+  {
+    id: "12",
+    name: "SAPELLI DOSSE",
+    thickness: "18mm",
+    sku: "SAPELLI-DOSSE",
+    price: "23.10",
+    unit: "m²",
+    category: "plaques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2021/03/Sapelli-Dose.jpg",
+    tag: "Premium",
+  },
+
+  // Panneaux acryliques (6)
+  {
+    id: "13",
+    name: "SAND (Acrylique)",
+    thickness: "18mm",
+    sku: "SAND-ACRY",
+    price: "18.20",
+    unit: "m²",
+    category: "acryliques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/05/sand-768x512-1.jpg",
+    tag: null,
+  },
+  {
+    id: "14",
+    name: "PIGEON (Acrylique)",
+    thickness: "18mm",
+    sku: "PIGEON-ACRY",
+    price: "18.60",
+    unit: "m²",
+    category: "acryliques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/05/pigeon-768x512-1.jpg",
+    tag: null,
+  },
+  {
+    id: "15",
+    name: "FIR GREEN (Acrylique)",
+    thickness: "18mm",
+    sku: "FIR-GREEN-ACRY",
+    price: "19.10",
+    unit: "m²",
+    category: "acryliques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2024/05/FIR-GREEN.jpg",
+    tag: "Promo",
+  },
+  {
+    id: "16",
+    name: "OXYDE RED (Acrylique)",
+    thickness: "18mm",
+    sku: "OXYDE-RED-ACRY",
+    price: "19.40",
+    unit: "m²",
+    category: "acryliques",
+    stock: false,
+    image: "http://mpbs.com.tn/wp-content/uploads/2024/05/OXYDE-RED.jpg",
+    tag: null,
+  },
+  {
+    id: "17",
+    name: "GRIS CHARBON MATT (Acrylique)",
+    thickness: "18mm",
+    sku: "GRIS-CHARBON-MATT-ACRY",
+    price: "18.90",
+    unit: "m²",
+    category: "acryliques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2022/05/grey-85728-matt.jpg",
+    tag: null,
+  },
+  {
+    id: "18",
+    name: "NOIR (Acrylique)",
+    thickness: "18mm",
+    sku: "NOIR-ACRY",
+    price: "20.00",
+    unit: "m²",
+    category: "acryliques",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2021/06/black-8421_Logo1.jpg",
+    tag: "Premium",
+  },
+
+  // Panneaux High Gloss (6)
+  {
+    id: "19",
+    name: "BLACK (High Gloss)",
+    thickness: "18mm",
+    sku: "BLACK-HG",
+    price: "24.10",
+    unit: "m²",
+    category: "high-gloss",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/BLACK.jpg",
+    tag: "Premium",
+  },
+  {
+    id: "20",
+    name: "CASMERE (High Gloss)",
+    thickness: "18mm",
+    sku: "CASMERE-HG",
+    price: "23.70",
+    unit: "m²",
+    category: "high-gloss",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/CASMERE.jpg",
+    tag: null,
+  },
+  {
+    id: "21",
+    name: "TRENDY GREY (High Gloss)",
+    thickness: "18mm",
+    sku: "TRENDY-GREY-HG",
+    price: "23.50",
+    unit: "m²",
+    category: "high-gloss",
+    stock: false,
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/TRENDY_GREY.jpg",
+    tag: null,
+  },
+  {
+    id: "22",
+    name: "VANILLA (High Gloss)",
+    thickness: "18mm",
+    sku: "VANILLA-HG",
+    price: "23.90",
+    unit: "m²",
+    category: "high-gloss",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/VANILLA.jpg",
+    tag: null,
+  },
+  {
+    id: "23",
+    name: "WHITE (High Gloss)",
+    thickness: "18mm",
+    sku: "WHITE-HG",
+    price: "24.30",
+    unit: "m²",
+    category: "high-gloss",
+    stock: true,
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/white.jpg",
+    tag: null,
+  },
+  
 ];
 
 export function CatalogScreen() {
@@ -135,11 +346,11 @@ export function CatalogScreen() {
         >
           <div>
             <div
-              style={{ color: "rgba(255,255,255,0.7)", fontSize: "11px", fontWeight: 500, letterSpacing: "0.5px" }}
+              style={{ color: "gray", fontSize: "11px", fontWeight: 500, letterSpacing: "0.5px" }}
             >
               BONJOUR
             </div>
-            <div style={{ color: "white", fontSize: "17px", fontWeight: 700 }}>
+            <div style={{ color: "darkslategray", fontSize: "17px", fontWeight: 700 }}>
               Sofiene Sellami
             </div>
           </div>
@@ -158,7 +369,7 @@ export function CatalogScreen() {
                 position: "relative",
               }}
             >
-              <Bell size={18} color="white" />
+              <Bell size={18} color="black" />
               <div
                 style={{
                   position: "absolute",
@@ -182,7 +393,7 @@ export function CatalogScreen() {
                 alignItems: "center",
                 justifyContent: "center",
                 fontWeight: 700,
-                color: "white",
+                color: "ghostwhite",
                 fontSize: "15px",
               }}
             >
@@ -213,7 +424,7 @@ export function CatalogScreen() {
               transition: "all 0.2s",
             }}
           >
-            <Search size={16} color={searchFocused ? "#8A9A8E" : "rgba(255,255,255,0.7)"} />
+            <Search size={16} color={searchFocused ? "#8A9A8E" : "gray"} />
             <input
               placeholder="Rechercher panneaux, SKU, marque..."
               onFocus={() => setSearchFocused(true)}
@@ -224,11 +435,11 @@ export function CatalogScreen() {
                 border: "none",
                 outline: "none",
                 fontSize: "14px",
-                color: searchFocused ? "#1A2520" : "rgba(255,255,255,0.9)",
+                color: searchFocused ? "#1A2520" : "black",
                 fontFamily: "Inter, sans-serif",
               }}
             />
-            <ScanBarcode size={18} color={searchFocused ? WOOD : "rgba(255,255,255,0.7)"} />
+            <ScanBarcode size={18} color={searchFocused ? WOOD : "gray"} />
           </div>
           <button
             style={{
@@ -243,7 +454,7 @@ export function CatalogScreen() {
               cursor: "pointer",
             }}
           >
-            <SlidersHorizontal size={18} color="white" />
+            <SlidersHorizontal size={18} color="black" />
           </button>
         </div>
       </div>
@@ -263,13 +474,13 @@ export function CatalogScreen() {
           }}
         >
           <div>
-            <div style={{ color: "rgba(255,255,255,0.8)", fontSize: "11px", fontWeight: 600, letterSpacing: "0.8px" }}>
+            <div style={{ color: "black", fontSize: "11px", fontWeight: 600, letterSpacing: "0.8px" }}>
               OFFRE LIMITÉE
             </div>
-            <div style={{ color: "white", fontSize: "16px", fontWeight: 700, marginTop: "2px" }}>
+            <div style={{ color: "darkslategray", fontSize: "16px", fontWeight: 700, marginTop: "2px" }}>
               Panneaux OSB3 — 15% de remise
             </div>
-            <div style={{ color: "rgba(255,255,255,0.75)", fontSize: "12px", marginTop: "2px" }}>
+            <div style={{ color: "black", fontSize: "12px", marginTop: "2px" }}>
               Pour commandes 50+ unités · Valable jusqu'au 31 mars
             </div>
           </div>
@@ -284,17 +495,17 @@ export function CatalogScreen() {
               cursor: "pointer",
             }}
           >
-            <span style={{ color: "white", fontSize: "12px", fontWeight: 600 }}>Voir</span>
-            <ChevronRight size={13} color="white" />
+            <span style={{ color: "black", fontSize: "12px", fontWeight: 600 }}>Voir</span>
+            <ChevronRight size={13} color="black" />
           </div>
         </div>
 
         {/* Stats row */}
-        <div style={{ display: "flex", gap: "10px", margin: "12px 14px 0" }}>
-          {[
-            { label: "Commandes ce mois", value: "24", icon: Package, color: G },
-            { label: "Total dépensé HT", value: "€12 450", icon: TrendingUp, color: WOOD },
-          ].map((s) => (
+        <div style={{ display: "flex", gap: "7px", margin: "12px 14px 0" }}>
+            {[
+              { label: "Commandes ce mois", value: "24", icon: Package, color: WOOD },
+              { label: "Total dépensé HT", value: "12 450 TND", icon: TrendingUp, color: WOOD },
+            ].map((s) => (
             <div
               key={s.label}
               style={{
@@ -354,7 +565,7 @@ export function CatalogScreen() {
                   border: activeCategory === cat.id ? "none" : "1.5px solid #EAEAEA",
                   background:
                     activeCategory === cat.id
-                      ? G
+                      ? WOOD
                       : "white",
                   color: activeCategory === cat.id ? "white" : "#1C0D0A",
                   fontSize: "12px",
@@ -425,7 +636,7 @@ export function CatalogScreen() {
                     {product.stock ? (
                       <div
                         style={{
-                          background: G,
+                          background: A,
                           color: "white",
                           fontSize: "9px",
                           fontWeight: 700,
@@ -472,7 +683,7 @@ export function CatalogScreen() {
                       position: "absolute",
                       bottom: "8px",
                       right: "8px",
-                      background: G,
+                      background: A,
                       border: "none",
                       borderRadius: "8px",
                       width: "30px",
@@ -527,9 +738,9 @@ export function CatalogScreen() {
                   >
                     <div>
                       <span
-                        style={{ fontSize: "16px", fontWeight: 800, color: G }}
+                        style={{ fontSize: "16px", fontWeight: 800, color: "gray" }}
                       >
-                        {product.price}€
+                        {product.price} TND
                       </span>
                       <span style={{ fontSize: "10px", color: "#8A9A8E", marginLeft: "2px" }}>
                         HT/{product.unit}

@@ -16,13 +16,14 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const G = "#FC4F00";
+const G = "#f5b99d";
 const WOOD = "#f5b99d";
+const A = "#FC4F00";
 
 const images = [
-  "https://images.unsplash.com/photo-1564691848938-d0fc26235733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  "https://images.unsplash.com/photo-1681752972862-cc60f9126e47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
-  "https://images.unsplash.com/photo-1772300704502-410f0fbd43bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=800",
+  "https://mpbs.com.tn/wp-content/uploads/2025/10/Frassino-TALPA-3047.jpg",
+  "https://mpbs.com.tn/wp-content/uploads/2025/10/Frassino-TALPA-3047.jpg",
+  "https://mpbs.com.tn/wp-content/uploads/2025/10/Frassino-TALPA-3047.jpg",
 ];
 
 const pricingTiers = [
@@ -269,7 +270,7 @@ export function ProductDetailsScreen() {
           >
             <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
               {[1, 2, 3, 4, 5].map((s) => (
-                <Star key={s} size={12} fill={s <= 4 ? WOOD : "none"} color={WOOD} />
+                <Star key={s} size={12} fill={s <= 4 ? A : "none"} color={A} />
               ))}
               <span style={{ fontSize: "12px", color: "#757575", marginLeft: "4px" }}>
                 4,2 (18 avis)
@@ -312,14 +313,14 @@ export function ProductDetailsScreen() {
           >
             <div style={{ display: "flex", alignItems: "baseline", gap: "6px", marginBottom: "4px" }}>
               <span style={{ fontSize: "32px", fontWeight: 800, color: G, lineHeight: 1 }}>
-                {currentPrice.toFixed(2)}€
+                {currentPrice.toFixed(2)} TND
               </span>
               <span style={{ fontSize: "14px", color: "#5A6A5E", fontWeight: 500 }}>
                 HT / unité
               </span>
             </div>
             <div style={{ fontSize: "11px", color: "#8A9A8E", marginBottom: "12px" }}>
-              ≈ {(currentPrice / (2.44 * 1.22)).toFixed(2)}€ HT/m² · TVA non incluse
+              ≈ {(currentPrice / (2.44 * 1.22)).toFixed(2)} TND HT/m² · TVA non incluse
             </div>
 
             {/* Tiered pricing table */}
@@ -372,7 +373,7 @@ export function ProductDetailsScreen() {
                       color: getActiveTier() === i ? G : tier.highlight ? WOOD : "#2D3A35",
                     }}
                   >
-                    {tier.price}€{" "}
+                    {tier.price} TND{" "}
                     <span style={{ fontWeight: 500, fontSize: "11px", color: "#8A9A8E" }}>HT</span>
                   </span>
                 </div>
@@ -444,7 +445,7 @@ export function ProductDetailsScreen() {
             }}
           >
             {[
-              { icon: Truck, text: "Port offert dès 500€" },
+              { icon: Truck, text: "Port offert dès 500 TND" },
               { icon: Package, text: "Expédié sous 2–3 jours" },
             ].map((item) => (
               <div
@@ -545,10 +546,10 @@ export function ProductDetailsScreen() {
         {/* Line total */}
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px" }}>
           <span style={{ fontSize: "12px", color: "#8A9A8E" }}>
-            {qty} unités × {currentPrice.toFixed(2)}€ HT
+            {qty} unités × {currentPrice.toFixed(2)} TND HT
           </span>
           <div style={{ display: "flex", alignItems: "baseline", gap: "3px" }}>
-            <span style={{ fontSize: "18px", fontWeight: 800, color: G }}>{totalPrice}€</span>
+            <span style={{ fontSize: "18px", fontWeight: 800, color: G }}>{totalPrice} TND</span>
             <span style={{ fontSize: "11px", color: "#8A9A8E" }}>HT</span>
           </div>
         </div>

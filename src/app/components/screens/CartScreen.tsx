@@ -13,8 +13,10 @@ import {
   Package,
 } from "lucide-react";
 
-const G = "#FC4F00";
+const G = "gray";
 const WOOD = "#f5b99d";
+const A = "#FC4F00";
+const Y = "#f4e9da";
 
 type CartItem = {
   id: string;
@@ -30,36 +32,34 @@ type CartItem = {
 const initCart: CartItem[] = [
   {
     id: "1",
-    name: "Panneau MDF Standard E1",
-    sku: "MDF-18-2440",
-    dimensions: "2440 × 1220 mm",
+    name: "CREME 3012",
     thickness: "18mm",
+    sku: "CREME-3012",
+    dimensions: "2440 × 1220 mm",
     unitPrice: 14.0,
     qty: 25,
-    image:
-      "https://images.unsplash.com/photo-1564691848938-d0fc26235733?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200",
+    image: "http://mpbs.com.tn/wp-content/uploads/2025/07/CREME-3012.jpg",
   },
+  
   {
     id: "2",
-    name: "Contreplaqué Bouleau BB/BB",
-    sku: "PLY-15-1220",
+    name: "CHENE FIL RC",
+    thickness: "18mm",
+    sku: "CHENE-FIL-RC",
     dimensions: "2440 × 1220 mm",
-    thickness: "15mm",
     unitPrice: 22.8,
     qty: 10,
-    image:
-      "https://images.unsplash.com/photo-1672656319286-03f92b44abf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200",
+    image:"http://mpbs.com.tn/wp-content/uploads/2021/03/Chene-FAF-Rec.jpg",
   },
   {
     id: "3",
-    name: "Panneau OSB 3 Structurel",
-    sku: "OSB-18-2500",
-    dimensions: "2500 × 1250 mm",
+    name: "FIR GREEN (Acrylique)",
     thickness: "18mm",
+    sku: "FIR-GREEN-ACRY",
+    dimensions: "2500 × 1250 mm",
     unitPrice: 11.2,
     qty: 50,
-    image:
-      "https://images.unsplash.com/photo-1634397270735-1090b6c20c3d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200",
+    image:"http://mpbs.com.tn/wp-content/uploads/2024/05/FIR-GREEN.jpg",
   },
 ];
 
@@ -98,7 +98,7 @@ export function CartScreen() {
       {/* Header */}
       <div
         style={{
-          background: `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`,
+          background: `linear-gradient(135deg, ${Y} 0%, ${WOOD} 100%)`,
           padding: "14px 16px 18px",
         }}
       >
@@ -117,20 +117,20 @@ export function CartScreen() {
               cursor: "pointer",
             }}
           >
-            <ArrowLeft size={18} color="white" />
+            <ArrowLeft size={18} color="black" />
           </button>
           <div>
             <h1
               style={{
                 fontSize: "18px",
                 fontWeight: 800,
-                color: "white",
+                color: "darkslategray",
                 margin: 0,
               }}
             >
               Mon Panier
             </h1>
-            <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>
+            <div style={{ fontSize: "12px", color: "black" }}>
               {cart.length} produit{cart.length !== 1 ? "s" : ""} · Prix HT (TVA non incl.)
             </div>
           </div>
@@ -147,16 +147,16 @@ export function CartScreen() {
             gap: "8px",
           }}
         >
-          <Truck size={15} color={freeShipping ? "#FFE2CF" : "rgba(255,255,255,0.6)"} />
+          <Truck size={15} color={freeShipping ? "#7A5A30" : "rgba(255,255,255,0.6)"} />
           {freeShipping ? (
-            <span style={{ fontSize: "12px", color: "#FFE2CF", fontWeight: 600 }}>
+            <span style={{ fontSize: "12px", color: "#7A5A30", fontWeight: 600 }}>
               ✓ Port gratuit appliqué sur cette commande
             </span>
           ) : (
             <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.8)" }}>
               Ajoutez{" "}
               <strong style={{ color: "white" }}>
-                {(500 - subtotalHT).toFixed(2)}€ HT
+                {(500 - subtotalHT).toFixed(2)} TND HT
               </strong>{" "}
               pour bénéficier du port gratuit
             </span>
@@ -211,7 +211,7 @@ export function CartScreen() {
                     {item.dimensions} · {item.thickness}
                   </div>
                   <div style={{ fontSize: "12px", color: WOOD, fontWeight: 600, marginTop: "3px" }}>
-                    {item.unitPrice.toFixed(2)}€ HT/unité
+                    {item.unitPrice.toFixed(2)} TND HT/unité
                   </div>
                 </div>
 
@@ -305,7 +305,7 @@ export function CartScreen() {
                 {/* Line total */}
                 <div style={{ textAlign: "right" }}>
                   <div style={{ fontSize: "16px", fontWeight: 800, color: G }}>
-                    {(item.unitPrice * item.qty).toFixed(2)}€
+                    {(item.unitPrice * item.qty).toFixed(2)} TND
                   </div>
                   <div style={{ fontSize: "10px", color: "#8A9A8E" }}>Total HT</div>
                 </div>
@@ -345,7 +345,7 @@ export function CartScreen() {
             <button
               onClick={() => promoCode && setPromoApplied(true)}
               style={{
-                background: promoApplied ? "#FEF1E4" : G,
+                background: promoApplied ? "#FEF1E4" : WOOD,
                 color: promoApplied ? G : "white",
                 border: "none",
                 borderRadius: "8px",
@@ -421,7 +421,7 @@ export function CartScreen() {
         >
           <div
             style={{
-              background: G,
+              background: WOOD,
               padding: "12px 14px",
               display: "flex",
               alignItems: "center",
@@ -438,16 +438,16 @@ export function CartScreen() {
             {[
               {
                 label: "Sous-total HT",
-                value: `${subtotalHT.toFixed(2)} €`,
+                value: `${subtotalHT.toFixed(2)} TND`,
                 color: "#1A2520",
                 bold: false,
               },
               ...(promoApplied
-                ? [{ label: "Promo — 5%", value: `−${discount.toFixed(2)} €`, color: G, bold: false }]
+                ? [{ label: "Promo — 5%", value: `−${discount.toFixed(2)} TND`, color: G, bold: false }]
                 : []),
               {
                 label: "TVA (20%)",
-                value: `${vat.toFixed(2)} €`,
+                value: `${vat.toFixed(2)} TND`,
                 color: "#7A8A7E",
                 bold: false,
               },
@@ -499,10 +499,10 @@ export function CartScreen() {
               </div>
               <div style={{ textAlign: "right" }}>
                 <div style={{ fontSize: "26px", fontWeight: 800, color: G }}>
-                  {totalTTC.toFixed(2)} €
+                  {totalTTC.toFixed(2)} TND
                 </div>
                 <div style={{ fontSize: "11px", color: "#8A9A8E" }}>
-                  ({subtotalAfterDiscount.toFixed(2)} € HT)
+                  ({subtotalAfterDiscount.toFixed(2)} TND HT)
                 </div>
               </div>
             </div>
@@ -524,7 +524,7 @@ export function CartScreen() {
         >
           <AlertCircle size={14} color={WOOD} style={{ flexShrink: 0, marginTop: "1px" }} />
           <div style={{ fontSize: "12px", color: "#7A5A30", lineHeight: "1.5" }}>
-            <strong>Commande minimum : 500€ HT.</strong> Port gratuit appliqué automatiquement pour les commandes dépassant ce seuil.
+            <strong>Commande minimum : 500 TND HT.</strong> Port gratuit appliqué automatiquement pour les commandes dépassant ce seuil.
           </div>
         </div>
 
@@ -544,7 +544,7 @@ export function CartScreen() {
           style={{
             width: "100%",
             background: subtotalHT >= 500
-              ? `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`
+              ? `linear-gradient(135deg, ${WOOD} 0%, ${WOOD} 100%)`
               : "#F2F2F2",
             color: subtotalHT >= 500 ? "white" : "#757575",
             border: "none",
