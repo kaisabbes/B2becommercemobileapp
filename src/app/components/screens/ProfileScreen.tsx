@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 const G = "#f4e9da";
-const WOOD = "#F5B99D";
+const WOOD = "#d47a20";
 const A = "#FC4F00";
 
 const menuSections = [
@@ -31,16 +31,16 @@ const menuSections = [
         icon: FileText,
         label: "Mes Devis",
         sub: "3 devis en attente de validation",
-        color: "#3B82F6",
+        color: "#F59E0B",
         badge: "3",
-        badgeColor: "#3B82F6",
+        badgeColor: A,
       },
       {
         id: "orders",
         icon: ClipboardList,
         label: "Historique & Factures",
         sub: "Consulter et télécharger vos factures",
-        color: WOOD,
+        color: "#F59E0B",
         badge: null,
         badgeColor: null,
         hasDownload: true,
@@ -55,16 +55,16 @@ const menuSections = [
         icon: Tag,
         label: "Ma Grille de prix personnalisée",
         sub: "Tarifs négociés pour votre compte",
-        color: WOOD,
+        color: "#F59E0B",
         badge: "NEW",
-        badgeColor: WOOD,
+        badgeColor: A,
       },
       {
         id: "company",
         icon: Building2,
         label: "Détails de la société",
         sub: "SIRET · TVA · Adresse de facturation",
-        color: "#6366F1",
+        color: "#F59E0B",
         badge: null,
         badgeColor: null,
       },
@@ -87,7 +87,7 @@ const menuSections = [
         icon: Settings,
         label: "Paramètres du compte",
         sub: "Mot de passe · Langue · 2FA",
-        color: "#8B5CF6",
+        color: "#F59E0B",
         badge: null,
         badgeColor: null,
       },

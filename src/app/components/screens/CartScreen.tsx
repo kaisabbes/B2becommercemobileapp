@@ -14,8 +14,8 @@ import {
 } from "lucide-react";
 
 const G = "gray";
-const WOOD = "#f5b99d";
-const A = "#FC4F00";
+const WOOD = "#FC4F00";
+const A = "#d47a20";
 const Y = "#f4e9da";
 
 type CartItem = {
@@ -98,7 +98,7 @@ export function CartScreen() {
       {/* Header */}
       <div
         style={{
-          background: `linear-gradient(135deg, ${Y} 0%, ${WOOD} 100%)`,
+          background: `linear-gradient(135deg, ${Y} 0%, ${A} 100%)`,
           padding: "14px 16px 18px",
         }}
       >
@@ -210,7 +210,7 @@ export function CartScreen() {
                   <div style={{ fontSize: "11px", color: "#7A8A7E" }}>
                     {item.dimensions} · {item.thickness}
                   </div>
-                  <div style={{ fontSize: "12px", color: WOOD, fontWeight: 600, marginTop: "3px" }}>
+                  <div style={{ fontSize: "12px", color: "dimgrey", fontWeight: 600, marginTop: "3px" }}>
                     {item.unitPrice.toFixed(2)} TND HT/unité
                   </div>
                 </div>
@@ -304,7 +304,7 @@ export function CartScreen() {
 
                 {/* Line total */}
                 <div style={{ textAlign: "right" }}>
-                  <div style={{ fontSize: "16px", fontWeight: 800, color: G }}>
+                  <div style={{ fontSize: "16px", fontWeight: 800, color: WOOD }}>
                     {(item.unitPrice * item.qty).toFixed(2)} TND
                   </div>
                   <div style={{ fontSize: "10px", color: "#8A9A8E" }}>Total HT</div>
@@ -345,7 +345,7 @@ export function CartScreen() {
             <button
               onClick={() => promoCode && setPromoApplied(true)}
               style={{
-                background: promoApplied ? "#FEF1E4" : WOOD,
+                background: promoApplied ? Y : WOOD,
                 color: promoApplied ? G : "white",
                 border: "none",
                 borderRadius: "8px",
@@ -391,7 +391,7 @@ export function CartScreen() {
               placeholder="ex. PO-2024-089 · Chantier Rue de Rivoli"
               style={{
                 width: "100%",
-                background: "#FEF1E4",
+                background: Y,
                 border: "1.5px solid #F7D8C2",
                 borderRadius: "9px",
                 padding: "10px 12px",
@@ -421,15 +421,15 @@ export function CartScreen() {
         >
           <div
             style={{
-              background: WOOD,
+              background: Y,
               padding: "12px 14px",
               display: "flex",
               alignItems: "center",
               gap: "8px",
             }}
           >
-            <Package size={15} color="white" />
-            <span style={{ fontSize: "13px", fontWeight: 700, color: "white", letterSpacing: "0.3px" }}>
+            <Package size={15} color="#7A5A30" />
+            <span style={{ fontSize: "13px", fontWeight: 700, color: "#7A5A30", letterSpacing: "0.3px" }}>
               RÉCAPITULATIF DE COMMANDE
             </span>
           </div>
@@ -498,7 +498,7 @@ export function CartScreen() {
                 <div style={{ fontSize: "10px", color: "#A0B0A5" }}>TVA incluse</div>
               </div>
               <div style={{ textAlign: "right" }}>
-                <div style={{ fontSize: "26px", fontWeight: 800, color: G }}>
+                <div style={{ fontSize: "26px", fontWeight: 800, color: WOOD }}>
                   {totalTTC.toFixed(2)} TND
                 </div>
                 <div style={{ fontSize: "11px", color: "#8A9A8E" }}>
@@ -516,7 +516,7 @@ export function CartScreen() {
             display: "flex",
             alignItems: "flex-start",
             gap: "8px",
-            background: "#FEF1E4",
+            background: Y,
             border: "1px solid #F7D8C2",
             borderRadius: "10px",
             padding: "10px 12px",
@@ -544,7 +544,7 @@ export function CartScreen() {
           style={{
             width: "100%",
             background: subtotalHT >= 500
-              ? `linear-gradient(135deg, ${WOOD} 0%, ${WOOD} 100%)`
+              ? `linear-gradient(135deg, ${A} 0%, ${A} 100%)`
               : "#F2F2F2",
             color: subtotalHT >= 500 ? "white" : "#757575",
             border: "none",

@@ -16,8 +16,8 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const G = "#f5b99d";
-const WOOD = "#f5b99d";
+const G = "#d47a20";
+const WOOD = "#FC4F00";
 const A = "#FC4F00";
 
 const images = [
@@ -621,7 +621,7 @@ export function ProductDetailsScreen() {
           <button
             style={{
               flex: 1,
-              background: `linear-gradient(135deg, ${G} 0%, ${WOOD} 100%)`,
+              background: `linear-gradient(135deg, ${G} 0%, ${G} 100%)`,
               color: "white",
               border: "none",
               borderRadius: "12px",

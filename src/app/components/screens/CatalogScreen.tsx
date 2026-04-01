@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 const G = "#f4e9da";
-const WOOD = "#F5B99D";
+const WOOD = "#d47a20";
 const A = "#FC4F00";
 
 const categories = [

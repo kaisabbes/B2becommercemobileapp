@@ -13,10 +13,11 @@ import {
   ShieldCheck,
   ChevronRight,
 } from "lucide-react";
+import mpbsLogo from "../images/mpbs.png";
 
 const THEME = {
   primary: "#f4e9da", // MPBS orange (seen on mpbs.com.tn)
-  primary2: "#f5b99d",
+  primary2: "#d47a20",
   ink: "#1C0D0A",
   muted: "#757575",
   surface: "#FFFFFF",
@@ -163,7 +164,7 @@ export function LoginScreen() {
             }}
           >
             <img 
-              src="src/app/components/images/mpbs.png" 
+              src={mpbsLogo}
               alt="MPBS Logo" 
               style={{ 
                 width: "100%", 

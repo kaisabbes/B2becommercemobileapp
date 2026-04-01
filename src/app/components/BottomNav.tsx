@@ -8,8 +8,8 @@ const navItems = [
   { label: "Profil", icon: User, path: "/app/profile" },
 ];
 
-const G = "#f4e9da";
-const WOOD = "#F5B99D";
+const G = "#FFFFFF";
+const WOOD = "#d47a20";
 const A = "#e1590a";
 
 export function BottomNav() {
