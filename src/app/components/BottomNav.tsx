@@ -1,12 +1,6 @@
 import { useNavigate, useLocation } from "react-router";
 import { Home, BookOpen, ShoppingCart, User } from "lucide-react";
-
-const navItems = [
-  { label: "Accueil", icon: Home, path: "/app" },
-  { label: "Catalogue", icon: BookOpen, path: "/app/catalog" },
-  { label: "Panier", icon: ShoppingCart, path: "/app/cart", badge: 3 },
-  { label: "Profil", icon: User, path: "/app/profile" },
-];
+import { useCart } from "../context/CartContext";
 
 const G = "#FFFFFF";
 const WOOD = "#d47a20";
@@ -15,6 +9,14 @@ const A = "#e1590a";
 export function BottomNav() {
   const navigate = useNavigate();
   const location = useLocation();
+  const { cartCount } = useCart();
+
+  const navItems = [
+    { label: "Accueil",   icon: Home,         path: "/app"          },
+    { label: "Catalogue", icon: BookOpen,      path: "/app/catalog"  },
+    { label: "Panier",    icon: ShoppingCart,  path: "/app/cart",    badge: cartCount },
+    { label: "Profil",    icon: User,          path: "/app/profile"  },
+  ];
 
   const isActive = (path: string) => {
     if (path === "/app" && location.pathname === "/app") return true;

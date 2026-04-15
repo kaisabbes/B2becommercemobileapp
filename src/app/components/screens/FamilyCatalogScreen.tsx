@@ -7,52 +7,40 @@ const ORANGE = "#FF6600";
 
 const families = [
   {
-    id: "portes",
-    name: "Portes",
-    subtitle: "Doors",
+    id: "melamine",
+    name: "Mélaminé",
+    subtitle: "Melamine Panels",
     decorCount: 48,
+    description: "Décors bois & unis",
     image:
-      "https://images.unsplash.com/photo-1759262151165-3330c14fd982?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b29kZW4lMjBpbnRlcmlvciUyMGRvb3IlMjBkZXNpZ258ZW58MXx8fHwxNzc1NDYwNjczfDA&ixlib=rb-4.1.0&q=80&w=600",
+      "https://images.unsplash.com/photo-1607706127558-45c2afcfb72c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWxhbWluZSUyMHdvb2QlMjBwYW5lbHMlMjB0ZXh0dXJlJTIwbWFudWZhY3R1cmluZ3xlbnwxfHx8fDE3NzYyNTc1NDd8MA&ixlib=rb-4.1.0&q=80&w=600",
   },
   {
-    id: "cuisines",
-    name: "Cuisines",
-    subtitle: "Kitchens",
-    decorCount: 62,
+    id: "plaques",
+    name: "Plaqué",
+    subtitle: "Veneered Panels",
+    decorCount: 32,
+    description: "Placage naturel",
     image:
-      "https://images.unsplash.com/photo-1758565810954-7c97ad680715?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBraXRjaGVuJTIwY2FiaW5ldCUyMHdvb2QlMjBmdXJuaXR1cmV8ZW58MXx8fHwxNzc1NDYwNjc0fDA&ixlib=rb-4.1.0&q=80&w=600",
+      "https://images.unsplash.com/photo-1573864960999-2b9e0d3db575?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2ZW5lZXJlZCUyMHdvb2QlMjBzdXJmYWNlJTIwbmF0dXJhbCUyMGdyYWluJTIwZmluaXNofGVufDF8fHx8MTc3NjI1NzU0OHww&ixlib=rb-4.1.0&q=80&w=600",
   },
   {
-    id: "bureau",
-    name: "Mobilier de Bureau",
-    subtitle: "Office Furniture",
-    decorCount: 35,
+    id: "acryliques",
+    name: "Acrylique",
+    subtitle: "Acrylic Panels",
+    decorCount: 24,
+    description: "Brillance & modernité",
     image:
-      "https://images.unsplash.com/photo-1773022768285-decb147b7b34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBvZmZpY2UlMjBmdXJuaXR1cmUlMjBkZXNrJTIwd29vZHxlbnwxfHx8fDE3NzU0NjA2NzR8MA&ixlib=rb-4.1.0&q=80&w=600",
+      "https://images.unsplash.com/photo-1716471330478-7296f0266c59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhY3J5bGljJTIwZ2xvc3N5JTIwY29sb3JlZCUyMHN1cmZhY2UlMjBtYXRlcmlhbHxlbnwxfHx8fDE3NzYyNTc1NDl8MA&ixlib=rb-4.1.0&q=80&w=600",
   },
   {
-    id: "mural",
-    name: "Revêtement Mural",
-    subtitle: "Wall Paneling",
-    decorCount: 41,
+    id: "high-gloss",
+    name: "High Gloss",
+    subtitle: "Ultra Gloss Panels",
+    decorCount: 20,
+    description: "Brillant extrême",
     image:
-      "https://images.unsplash.com/photo-1768320837734-02390d59dfea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kJTIwd2FsbCUyMHBhbmVsaW5nJTIwaW50ZXJpb3IlMjBkZXNpZ258ZW58MXx8fHwxNzc1NDYwNjc1fDA&ixlib=rb-4.1.0&q=80&w=600",
-  },
-  {
-    id: "placards",
-    name: "Placards & Dressings",
-    subtitle: "Wardrobes",
-    decorCount: 56,
-    image:
-      "https://images.unsplash.com/photo-1765277789187-17428ac17008?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b29kZW4lMjBiZWRyb29tJTIwd2FyZHJvYmUlMjBjbG9zZXQlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NzU0NjA2NzV8MA&ixlib=rb-4.1.0&q=80&w=600",
-  },
-  {
-    id: "rayonnage",
-    name: "Rayonnage & Étagères",
-    subtitle: "Shelving",
-    decorCount: 29,
-    image:
-      "https://images.unsplash.com/photo-1763888537845-8fcf31cb0570?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXRhaWwlMjBzdG9yZSUyMHdvb2RlbiUyMHNoZWxmJTIwZGlzcGxheXxlbnwxfHx8fDE3NzU0NjA2NzV8MA&ixlib=rb-4.1.0&q=80&w=600",
+      "https://images.unsplash.com/photo-1656646424775-23849832a088?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoaWdoJTIwZ2xvc3MlMjBsYWNxdWVyJTIwY2FiaW5ldCUyMHVsdHJhJTIwc2hpbnklMjBzdXJmYWNlfGVufDF8fHx8MTc3NjI1NzU0OXww&ixlib=rb-4.1.0&q=80&w=600",
   },
 ];
 
@@ -65,7 +53,8 @@ export function FamilyCatalogScreen() {
     ? families.filter(
         (f) =>
           f.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          f.subtitle.toLowerCase().includes(searchQuery.toLowerCase())
+          f.subtitle.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          f.description.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : families;
 
@@ -167,12 +156,7 @@ export function FamilyCatalogScreen() {
             transition: "all 0.2s",
           }}
         >
-          <Search
-            size={15}
-            color={
-              searchFocused ? "#8A9A8E" : "gray"
-            }
-          />
+          <Search size={15} color={searchFocused ? "#8A9A8E" : "gray"} />
           <input
             placeholder="Rechercher une famille de produits..."
             value={searchQuery}
@@ -189,16 +173,12 @@ export function FamilyCatalogScreen() {
               fontFamily: "Inter, sans-serif",
             }}
           />
-          <ScanBarcode
-            size={17}
-            color={searchFocused ? ORANGE : "black"}
-          />
+          <ScanBarcode size={17} color={searchFocused ? ORANGE : "black"} />
         </div>
       </div>
 
       {/* ── Scrollable content ─────────────────────────────── */}
       <div style={{ flex: 1, overflowY: "auto", padding: "16px 14px" }}>
-
         {/* Section header */}
         <div
           style={{
@@ -231,7 +211,7 @@ export function FamilyCatalogScreen() {
                   letterSpacing: "0.2px",
                 }}
               >
-                Applications &amp; Usages
+                Types de Panneaux
               </div>
               <div style={{ fontSize: "10px", color: "#8A9A8E" }}>
                 {filtered.length} familles disponibles
@@ -249,9 +229,7 @@ export function FamilyCatalogScreen() {
               padding: "0",
             }}
           >
-            <span
-              style={{ fontSize: "11px", color: ORANGE, fontWeight: 600 }}
-            >
+            <span style={{ fontSize: "11px", color: ORANGE, fontWeight: 600 }}>
               Voir tout
             </span>
             <ChevronRight size={12} color={ORANGE} />
@@ -338,15 +316,15 @@ export function FamilyCatalogScreen() {
                     fontWeight: 600,
                     letterSpacing: "0.9px",
                     textTransform: "uppercase",
-                    marginBottom: "3px",
+                    marginBottom: "2px",
                   }}
                 >
-                  {family.subtitle}
+                  {family.description}
                 </div>
                 <div
                   style={{
                     color: "white",
-                    fontSize: "14px",
+                    fontSize: "15px",
                     fontWeight: 700,
                     lineHeight: "1.25",
                   }}
@@ -409,9 +387,7 @@ export function FamilyCatalogScreen() {
               flexShrink: 0,
             }}
           >
-            <span
-              style={{ color: "white", fontSize: "11px", fontWeight: 700 }}
-            >
+            <span style={{ color: "white", fontSize: "11px", fontWeight: 700 }}>
               Voir
             </span>
             <ChevronRight size={12} color="white" />

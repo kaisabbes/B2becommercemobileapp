@@ -1,5 +1,6 @@
 import { RouterProvider } from "react-router";
 import { router } from "./routes";
+import { CartProvider } from "./context/CartContext";
 
 export default function App() {
   return (
@@ -78,7 +79,9 @@ export default function App() {
           className="overflow-hidden"
           style={{ height: "calc(844px - 10px - 10px - 36px)" }}
         >
-          <RouterProvider router={router} />
+          <CartProvider>
+            <RouterProvider router={router} />
+          </CartProvider>
         </div>
       </div>
     </div>
